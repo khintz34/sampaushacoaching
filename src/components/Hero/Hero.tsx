@@ -7,6 +7,7 @@ import { IconContext } from "react-icons";
 import { useState } from "react";
 
 export function Hero() {
+  const ICON_SIZE = "40px";
   return (
     <main className={styles.main}>
       <div className={styles.header}>
@@ -15,7 +16,7 @@ export function Hero() {
           <h2 className={styles.logoH2}>Fitness Coaching</h2>
         </div>
         <div className={styles.hamburgerIcon}>
-          <IconContext.Provider value={{ size: "40px" }}>
+          <IconContext.Provider value={{ size: ICON_SIZE }}>
             <GiHamburgerMenu />
           </IconContext.Provider>
         </div>
@@ -28,7 +29,7 @@ export function Hero() {
           alt="Sam Pausha riding his bike in the Madison Ironman"
           className={styles.heroImage}
         />
-        <div className={styles.overlay}></div>
+        <div className={styles.overlay} />
       </div>
       <div className={styles.heroFooter}>
         <div className={`${styles.red} ${styles.heroType}`}>SWIM</div>
