@@ -1,8 +1,6 @@
 "use client";
 import HeroDesktop from "../../assets/images/HeroDesktop.jpg";
-import MobileOne from "../../assets/images/MobileOne.jpg";
-import MobileTwo from "../../assets/images/MobileTwo.jpg";
-import MobileThree from "../../assets/images/MobileThree.jpg";
+import MobileThree from "../../assets/images/mobileThree.jpg";
 import Image from "next/image";
 import styles from "./Hero.module.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
