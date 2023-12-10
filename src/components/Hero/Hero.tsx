@@ -1,13 +1,30 @@
 "use client";
 import HeroDesktop from "../../assets/images/HeroDesktop.jpg";
+import MobileOne from "../../assets/images/MobileOne.jpg";
+import MobileTwo from "../../assets/images/MobileTwo.jpg";
+import MobileThree from "../../assets/images/MobileThree.jpg";
 import Image from "next/image";
 import styles from "./Hero.module.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IconContext } from "react-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Hero() {
   const ICON_SIZE = "40px";
+  const [mobile, setMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (screen.width > 600) {
+      setMobile(false);
+    } else {
+      setMobile(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log(mobile);
+  }, [mobile]);
+
   return (
     <main className={styles.main}>
       <div className={styles.header}>
@@ -22,18 +39,28 @@ export function Hero() {
         </div>
       </div>
       <div className={styles.imageWrapper}>
-        <Image
-          width={1440}
-          src={HeroDesktop}
-          height={700}
-          alt="Sam Pausha riding his bike in the Madison Ironman"
-          className={styles.heroImage}
-        />
+        {mobile ? (
+          <Image
+            src={MobileThree}
+            objectFit={"contain"}
+            alt="Sam Pausha running in the Madison Ironman"
+            className={styles.heroImage}
+          />
+        ) : (
+          <Image
+            width={1440}
+            src={HeroDesktop}
+            height={700}
+            alt="Sam Pausha riding his bike in the Madison Ironman"
+            className={styles.heroImage}
+          />
+        )}
+
         <div className={styles.overlay} />
       </div>
       <div className={styles.heroFooter}>
         <div className={`${styles.red} ${styles.heroType}`}>SWIM</div>
-        <div className={`${styles.heroType}`}>BIKE</div>
+        <div className={`${styles.white} ${styles.heroType}`}>BIKE</div>
         <div className={`${styles.blue} ${styles.heroType}`}>RUN</div>
       </div>
     </main>
