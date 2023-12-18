@@ -1,12 +1,14 @@
 "use client";
 import HeroDesktop from "../../assets/images/HeroDesktop.jpg";
 import MobileThree from "../../assets/images/mobileThree.jpg";
+import HeroMobile from "../../assets/images/MobileHerov1.jpg";
 import Image from "next/image";
 import styles from "./Hero.module.scss";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { FiMenu } from "react-icons/fi";
 import { IconContext } from "react-icons";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { Logo } from "../Logo/Logo";
 
 // todo create comp for Logo
 // todo media query for ipad
@@ -19,23 +21,22 @@ export function Hero() {
   return (
     <main className={styles.main}>
       <div className={styles.header}>
-        <div className={styles.logo}>
-          <h1 className={styles.logoName}>Sam Pausha</h1>
-          <h2 className={styles.logoLabel}>Fitness Coaching</h2>
-        </div>
+        <Logo />
         <div className={styles.hamburgerIcon}>
           <IconContext.Provider value={{ size: ICON_SIZE }}>
-            <GiHamburgerMenu />
+            <FiMenu />
           </IconContext.Provider>
         </div>
       </div>
       <div className={styles.imageWrapper}>
         <div className={`${styles.mobileImage} ${styles.image}`}>
           <Image
-            src={MobileThree}
-            objectFit={"contain"}
+            src={HeroMobile}
+            objectFit="cover"
             alt="Sam Pausha running in the Madison Ironman"
-            className={styles.heroImage}
+            className={`${styles.heroImage}`}
+            objectPosition="50% 50%"
+            layout="fill"
           />
         </div>
         <div className={`${styles.desktopImage} ${styles.image}`}>
