@@ -1,3 +1,8 @@
+.main {
+  overflow: hidden;
+  max-width: 100vw;
+}
+
 .header {
   position: absolute;
   left: 0vw;
@@ -10,71 +15,88 @@
   align-items: center;
   height: 10vh;
   color: var(--primary-font);
-  z-index: 2;
-}
+  z-index: 100;
+  padding: 12px 24px;
+  overflow: hidden;
 
-.logoH1 {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 3.5vh;
-  height: 3.5vh;
-}
-
-.logoH2 {
-  font-style: normal;
-  font-weight: 100;
-  font-size: 2vh;
-  height: auto;
-}
-
-.logo {
-  width: 30vw;
-  max-width: 80vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0vh;
-  padding-left: 2vw;
-  font-size: 2vh;
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+  }
 }
 
 .hamburgerIcon:hover {
   cursor: pointer;
 }
 
-.hamburgerIcon {
-  padding-right: 2vw;
-}
-
 .heroFooter {
   position: absolute;
   bottom: 10vh;
-  left: 0vw;
-  height: 20vh;
-  width: 90vw;
+  left: 0;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: 10vw;
+  font-size: 120px;
   font-weight: 800;
   font-style: italic;
-  padding: 0 5vw;
+  padding: 0 40px;
+
+  @media (max-width: 768px) {
+    max-width: 100vw;
+    font-size: 5rem;
+    gap: 1vh;
+    right: 0;
+    flex-direction: column;
+    bottom: 2vh;
+  }
 }
 
 .red {
   color: var(--red-font);
+  @media (max-width: 768px) {
+    text-align: left;
+  }
 }
 
 .blue {
   color: var(--blue-font);
+
+  @media (max-width: 768px) {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    padding-right: 2vw;
+  }
 }
 
-.heroType {
-  text-align: left;
+.white {
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
+
+.exerciseTypeTitle {
+  @media (max-width: 768px) {
+    width: 80vw;
+    height: 6rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0;
+    white-space: nowrap;
+  }
 }
 
 .imageWrapper {
   position: relative;
+
+  @media (max-width: 768px) {
+    overflow: hidden;
+    max-height: 100vh;
+    height: 100vh;
+    max-width: 100vw;
+    width: 100vw;
+  }
 }
 
 .overlay {
@@ -84,4 +106,30 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.image {
+  height: 100vh;
+  width: 100vw;
+
+  @media (max-width: 768px) {
+    height: 105vh;
+    width: 105vw;
+  }
+}
+
+.mobileImage {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .desktopImage {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobileImage {
+    display: none;
+  }
 }
