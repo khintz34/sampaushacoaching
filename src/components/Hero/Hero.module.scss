@@ -111,6 +111,11 @@
 .image {
   height: 100vh;
   width: 100vw;
+
+  @media (max-width: 768px) {
+    height: 105vh;
+    width: 105vw;
+  }
 }
 
 .mobileImage {

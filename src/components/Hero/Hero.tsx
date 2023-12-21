@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Logo } from "../Logo/Logo";
 
+//todo why is there a gap again with mobileHero
 // todo create comp for Logo
 // todo media query for ipad
 // todo media query for galazyFold
