@@ -1,8 +1,9 @@
 :root {
-  --primary-font: white;
+  --primary-font: #ffffff;
   --red-font: #ea1f1f;
   --blue-font: #292fe0;
-  --black-font: black;
+  --black-font: #000000;
+  --h2-font: #373e40;
 }
 
 * {
@@ -10,4 +11,28 @@
   margin: 0;
   color: var(--primary-font);
   box-sizing: border-box;
+}
+
+h2 {
+  font-size: 56px;
+  color: var(--h2-font);
+  font-weight: 800;
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 281px) {
+    font-size: 30px;
+  }
+}
+
+p {
+  color: var(--black-font);
+  font-size: 24px;
+  font-weight: 400;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 }
