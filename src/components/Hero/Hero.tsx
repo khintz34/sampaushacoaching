@@ -10,8 +10,6 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Logo } from "../Logo/Logo";
 
-// todo media query for ipad
-
 export function Hero() {
   const ICON_SIZE = "40px";
 
