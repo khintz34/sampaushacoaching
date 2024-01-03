@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 991px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+
+  @media (max-width: 991px) {
+    overflow: hidden;
+    max-height: 50vh;
+    height: 50vh;
+    max-width: 100vw;
+    width: 100vw;
+  }
+}
+
+.image {
+  height: 70vh;
+  width: 65vw;
+
+  @media (max-width: 991px) {
+    height: 50vh;
+    width: 105vw;
+  }
+}
+
+.mobileImage {
+  position: relative;
+}
+
+.desktopImage {
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
+
+.mobileImage {
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
