@@ -2,24 +2,12 @@ import styles from "./ClientQuote.module.scss";
 import finishLine from "../../assets/images/finishLine.jpg";
 import Image from "next/image";
 import classNames from "classnames";
+import { Quote } from "../Quote/Quote";
 
 export function ClientQuote() {
   return (
     <div className={styles.main}>
-      <div className={styles.clientQuoteContainer}>
-        <p className={styles.clientQuotePara}>
-          &quot;Sam Pausha Coaching played a pivotal role in my 5k success.
-          Sam&apos;s personalized training and constant encouragement not only
-          got me across the finish line but also instilled a newfound love for
-          running in my life.&quot;
-        </p>
-        <div>
-          <p className={styles.medium}>Kevin H.</p>
-          <p className={styles.fontFourteen}>
-            Personalized 5k Training Program
-          </p>
-        </div>
-      </div>
+      <Quote />
 
       <div className={styles.imageWrapper}>
         <div className={classNames(styles.mobileImage, styles.image)}>

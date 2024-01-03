@@ -4,16 +4,25 @@
   font-size: 12px;
   height: auto;
   color: var(--white-color);
+
+  @media (max-width: 768px) {
+    width: 50vw;
+  }
+
+  @media (max-width: 280px) {
+    width: 60vw;
+  }
 }
 
 .logoName {
   height: auto;
-}
 
-@media (max-width: 768px) {
-  .logoName,
-  .logoLabel {
+  @media (max-width: 768px) {
     width: 50vw;
+  }
+
+  @media (max-width: 280px) {
+    width: 60vw;
   }
 }
 
