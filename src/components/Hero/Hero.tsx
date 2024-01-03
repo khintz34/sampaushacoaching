@@ -36,11 +36,14 @@ export function Hero() {
         </div>
         <div className={`${styles.desktopImage} ${styles.image}`}>
           <Image
-            width={1440}
+            // width={1440}
             src={HeroDesktop}
-            height={700}
+            // height={700}
             alt="Sam Pausha riding his bike in the Madison Ironman"
             className={styles.heroImage}
+            objectFit="cover"
+            layout="fill"
+            objectPosition="50% 50%"
           />
         </div>
 

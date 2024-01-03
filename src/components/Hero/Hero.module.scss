@@ -142,13 +142,13 @@
   position: relative;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .desktopImage {
     display: none;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 992px) {
   .mobileImage {
     display: none;
   }

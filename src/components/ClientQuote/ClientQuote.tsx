@@ -3,11 +3,12 @@ import finishLine from "../../assets/images/finishLine.jpg";
 import Image from "next/image";
 import classNames from "classnames";
 import { Quote } from "../Quote/Quote";
+import { SwiperQuotes } from "../SwiperQuotes/SwiperQuotes";
 
 export function ClientQuote() {
   return (
     <div className={styles.main}>
-      <Quote />
+      <SwiperQuotes />
 
       <div className={styles.imageWrapper}>
         <div className={classNames(styles.mobileImage, styles.image)}>
