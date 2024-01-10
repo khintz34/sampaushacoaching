@@ -1,0 +1,44 @@
+.main {
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: 1023px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+
+  @media (max-width: 1023px) {
+    overflow: hidden;
+    height: 50vh;
+    width: 100vw;
+  }
+}
+
+.image {
+  height: 70vh;
+  width: 65vw;
+
+  @media (max-width: 1023px) {
+    height: 50vh;
+    width: 100vw;
+  }
+}
+
+.mobileImage {
+  position: relative;
+}
+
+.desktopImage {
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.mobileImage {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}

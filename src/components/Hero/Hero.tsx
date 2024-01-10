@@ -10,14 +10,8 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Logo } from "../Logo/Logo";
 
-//todo why is there a gap again with mobileHero
-// todo create comp for Logo
-// todo media query for ipad
-// todo media query for galazyFold
-
 export function Hero() {
   const ICON_SIZE = "40px";
-  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   return (
     <main className={styles.main}>
@@ -42,11 +36,14 @@ export function Hero() {
         </div>
         <div className={`${styles.desktopImage} ${styles.image}`}>
           <Image
-            width={1440}
+            // width={1440}
+            // height={700}
             src={HeroDesktop}
-            height={700}
             alt="Sam Pausha riding his bike in the Madison Ironman"
             className={styles.heroImage}
+            objectFit="cover"
+            layout="fill"
+            objectPosition="50% 50%"
           />
         </div>
 

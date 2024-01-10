@@ -19,9 +19,10 @@
   padding: 12px 24px;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     position: fixed;
     top: 0;
+    padding: 12px;
   }
 }
 
@@ -42,7 +43,14 @@
   font-style: italic;
   padding: 0 40px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
+    padding: 0;
+    font-size: 110px;
+    justify-content: space-around;
+    max-width: 100vw;
+  }
+
+  @media (max-width: 1023px) {
     max-width: 100vw;
     font-size: 5rem;
     gap: 1vh;
@@ -54,7 +62,7 @@
 
 .red {
   color: var(--red-font);
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     text-align: left;
   }
 }
@@ -62,7 +70,7 @@
 .blue {
   color: var(--blue-font);
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     text-align: right;
     margin: 0;
     padding: 0;
@@ -71,13 +79,13 @@
 }
 
 .white {
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     text-align: center;
   }
 }
 
 .exerciseTypeTitle {
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     width: 80vw;
     height: 6rem;
     box-sizing: border-box;
@@ -90,7 +98,7 @@
 .imageWrapper {
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     overflow: hidden;
     max-height: 100vh;
     height: 100vh;
@@ -112,7 +120,7 @@
   height: 100vh;
   width: 100vw;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     height: 105vh;
     width: 105vw;
   }
@@ -122,13 +130,13 @@
   position: relative;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .desktopImage {
     display: none;
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
   .mobileImage {
     display: none;
   }

@@ -1,20 +1,19 @@
-.logoName {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  height: 3.5vh;
-}
-
 .logoLabel {
   font-style: normal;
-  font-weight: 100;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 12px;
   height: auto;
+  color: var(--white-color);
+
+  @media (max-width: 1023px) {
+    width: 50vw;
+  }
 }
 
-@media (max-width: 768px) {
-  .logoName,
-  .logoLabel {
+.logoName {
+  height: auto;
+
+  @media (max-width: 1023px) {
     width: 50vw;
   }
 }
