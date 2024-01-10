@@ -7,13 +7,13 @@ type Props = {
   type: string;
 };
 
-export function Quote(props: Props) {
+export function Quote({ quote, name, type }: Props) {
   return (
     <div className={styles.clientQuoteContainer}>
-      <p className={styles.clientQuotePara}>&quot;{props.quote}&quot;</p>
+      <p className={styles.clientQuotePara}>&quot;{quote}&quot;</p>
       <div>
-        <p className={styles.medium}>{props.name}</p>
-        <p className={styles.fontFourteen}>{props.type}</p>
+        <p className={styles.medium}>{name}</p>
+        <p className={styles.fontFourteen}>{type}</p>
       </div>
     </div>
   );

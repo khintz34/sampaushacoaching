@@ -5,7 +5,7 @@
   flex-direction: column;
 }
 
-.taglinePara {
+.taglineParagrapgh {
   width: auto;
 }
 
@@ -15,9 +15,5 @@
 }
 
 .h2 {
-  margin-bottom: -30px;
-
-  @media (max-width: 768px) {
-    margin-bottom: -15px;
-  }
+  line-height: 50%;
 }

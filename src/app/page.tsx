@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero/Hero";
 import { Tagline } from "@/components/Tagline/Tagline";
 import { ClientQuote } from "@/components/ClientQuote/ClientQuote";
 import { Quote } from "../components/Quote/Quote";
+import { About } from "@/components/About/About";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <Tagline />
       <ClientQuote />
+      {/* <About /> */}
     </main>
   );
 }

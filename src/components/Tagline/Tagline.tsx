@@ -7,10 +7,10 @@ export function Tagline() {
       <h2 className={styles.h2}>Your Journey.</h2>
       <h2>Your Goals.</h2>
       <div className={styles.paraContainer}>
-        <p className={styles.taglinePara}>
+        <p className={styles.taglineParagrapgh}>
           From Couch to 5K Triumphs to Triathlon Peaks.
         </p>
-        <p className={styles.taglinePara}>
+        <p className={styles.taglineParagrapgh}>
           Unleash Your Potential with Personalized Fitness Excellence.
         </p>
       </div>

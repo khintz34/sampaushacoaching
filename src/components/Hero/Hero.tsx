@@ -37,8 +37,8 @@ export function Hero() {
         <div className={`${styles.desktopImage} ${styles.image}`}>
           <Image
             // width={1440}
-            src={HeroDesktop}
             // height={700}
+            src={HeroDesktop}
             alt="Sam Pausha riding his bike in the Madison Ironman"
             className={styles.heroImage}
             objectFit="cover"
