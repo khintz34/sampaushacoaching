@@ -5,7 +5,6 @@ import { Pagination } from "swiper/modules";
 import "swiper/css/bundle";
 import { Quote } from "../Quote/Quote";
 import { QuoteData } from "../../assets/data/QuoteData";
-import { QueryCompositeFilterConstraint } from "firebase/firestore";
 
 export function SwiperQuotes() {
   return (
