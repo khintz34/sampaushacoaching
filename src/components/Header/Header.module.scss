@@ -1,0 +1,115 @@
+.hamburgerMenu {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  right: 24px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburgerMenu:has(input:checked) {
+  --foreground: var(--primary-font);
+  --background: var(--black-font);
+}
+
+.hamburgerMenu:has(input:focus-visible)::before,
+.hamburgerMenu:has(input:focus-visible)::after,
+.hamburgerMenu input:focus-visible {
+  border: 1px solid var(--background-main);
+  box-shadow: 0 0 0 1px var(--primary-font);
+}
+
+.hamburgerMenu::before,
+.hamburgerMenu::after,
+.hamburgerMenu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--primary-font);
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing),
+    background-color var(--animation-timing);
+}
+
+.hamburgerMenu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburgerMenu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburgerMenu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburgerMenu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.header {
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  // backdrop-filter: blur(10px);
+  // -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+
+  @media (max-width: 1023px) {
+    position: fixed;
+    top: 0;
+    padding: 12px;
+  }
+}
+
+.textDecorationNone {
+  text-decoration: none;
+  z-index: 10;
+}
+
+.menuNav {
+  overflow-y: scroll;
+  list-style: none;
+  position: absolute;
+  top: 0vh;
+  height: 100vh;
+  z-index: 1;
+  margin: 0;
+  padding-top: 12vh;
+  display: block;
+  opacity: 1;
+  transition: 1s;
+  right: -10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2vh;
+  padding-left: 10vw;
+  background-color: var(--black-font);
+}
+
+.menuNav.showMenu {
+  width: 110%;
+}
+.menuNav.hideNav {
+  width: 0%;
+}

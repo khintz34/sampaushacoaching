@@ -5,6 +5,16 @@
   --black-font: #000000;
   --h2-font: #373e40;
   --background-main: #eeece7;
+  --bar-width: 25px;
+  --bar-height: 3px;
+  --hamburger-gap: 5px;
+  --foreground: var(--primary-font);
+  --background: var(--background-main);
+  --hamburger-margin: 0.5vh;
+  --hamburger-margin-left: 90vw;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
 }
 
 * {

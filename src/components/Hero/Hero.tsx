@@ -9,20 +9,22 @@ import { IconContext } from "react-icons";
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Logo } from "../Logo/Logo";
+import Header from "../Header/Header";
 
 export function Hero() {
   const ICON_SIZE = "40px";
 
   return (
     <main className={styles.main}>
-      <div className={styles.header}>
+      {/* <div className={styles.header}>
         <Logo />
         <div className={styles.hamburgerIcon}>
           <IconContext.Provider value={{ size: ICON_SIZE }}>
             <FiMenu />
           </IconContext.Provider>
         </div>
-      </div>
+      </div> */}
+      <Header />
       <div className={styles.imageWrapper}>
         <div className={`${styles.mobileImage} ${styles.image}`}>
           <Image
@@ -36,8 +38,6 @@ export function Hero() {
         </div>
         <div className={`${styles.desktopImage} ${styles.image}`}>
           <Image
-            // width={1440}
-            // height={700}
             src={HeroDesktop}
             alt="Sam Pausha riding his bike in the Madison Ironman"
             className={styles.heroImage}
