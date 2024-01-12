@@ -14,8 +14,12 @@ const Header = () => {
   const handleToggle = () => {
     if (navbarStatus === true) {
       changeStatus(false);
+      document.body.style.overflow = "unset";
     } else {
       changeStatus(true);
+      if (typeof window != "undefined" && window.document) {
+        document.body.style.overflow = "hidden";
+      }
     }
   };
 
