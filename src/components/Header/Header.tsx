@@ -4,7 +4,6 @@ import styles from "../Header/Header.module.scss";
 import Link from "next/link";
 import { useNavbarStore } from "@/stores/navbarStore";
 import { Logo } from "../Logo/Logo";
-import classNames from "classnames";
 import { MenuItem } from "../MenuItem/MenuItem";
 
 const Header = () => {
