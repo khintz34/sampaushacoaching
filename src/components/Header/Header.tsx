@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "../Header/Header.module.scss";
 import Link from "next/link";
 import { useNavbarStore } from "@/stores/navbarStore";
@@ -10,6 +10,18 @@ const Header = () => {
   const navbarStatus = useNavbarStore((state) => state.navbarStatus);
   const changeStatus = useNavbarStore((state) => state.changeStatus);
   const checkRef = useRef<HTMLInputElement>(null);
+  const [color, setColor] = useState<boolean>(false);
+  const changeColor = () => {
+    if (window.scrollY >= 200) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeColor);
+  }, []);
 
   const handleToggle = () => {
     if (navbarStatus === true) {
@@ -29,7 +41,11 @@ const Header = () => {
   };
 
   return (
-    <div className={`${styles.header}`}>
+    <div
+      className={`${styles.header} ${
+        color ? styles.headerScrolled : styles.none
+      }`}
+    >
       <Link href={"/"} className={styles.textDecorationNone}>
         <Logo />
       </Link>
