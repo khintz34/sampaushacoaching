@@ -5,18 +5,18 @@ import Link from "next/link";
 import { useNavbarStore } from "@/stores/navbarStore";
 import { Logo } from "../Logo/Logo";
 import { MenuItem } from "../MenuItem/MenuItem";
+import { menuItemData } from "../../assets/data/MenuItemData";
+import classNames from "classnames";
 
 const Header = () => {
   const navbarStatus = useNavbarStore((state) => state.navbarStatus);
-  const changeStatus = useNavbarStore((state) => state.changeStatus);
+  const changeNavbarStatus = useNavbarStore(
+    (state) => state.changeNavbarStatus
+  );
   const checkRef = useRef<HTMLInputElement>(null);
   const [color, setColor] = useState<boolean>(false);
   const changeColor = () => {
-    if (window.scrollY >= 200) {
-      setColor(true);
-    } else {
-      setColor(false);
-    }
+    setColor(window.scrollY >= 200);
   };
 
   useEffect(() => {
@@ -25,10 +25,10 @@ const Header = () => {
 
   const handleToggle = () => {
     if (navbarStatus === true) {
-      changeStatus(false);
+      changeNavbarStatus(false);
       document.body.style.overflow = "unset";
     } else {
-      changeStatus(true);
+      changeNavbarStatus(true);
       if (typeof window != "undefined" && window.document) {
         document.body.style.overflow = "hidden";
       }
@@ -37,19 +37,20 @@ const Header = () => {
 
   const closeMenu = () => {
     checkRef.current!.checked = false;
-    changeStatus(false);
+    changeNavbarStatus(false);
   };
 
   return (
     <div
-      className={`${styles.header} ${
+      className={classNames(
+        styles.header,
         color ? styles.headerScrolled : styles.none
-      }`}
+      )}
     >
       <Link href={"/"} className={styles.textDecorationNone}>
         <Logo />
       </Link>
-      <label className={`${styles.hamburgerMenu}`} htmlFor="hamburgerMenu">
+      <label className={styles.hamburgerMenu} htmlFor="hamburgerMenu">
         <input
           type="checkbox"
           onClick={handleToggle}
@@ -59,15 +60,20 @@ const Header = () => {
       </label>
       <div className={styles.sideNav}>
         <ul
-          className={`${styles.menuNav}  ${
-            navbarStatus === true ? `${styles.showMenu}` : `${styles.hideNav}`
-          }`}
+          className={classNames(
+            styles.menuNav,
+            navbarStatus === true ? styles.showMenu : styles.hideNav
+          )}
         >
-          <MenuItem closeMenu={closeMenu} name="Home" />
-          <MenuItem closeMenu={closeMenu} name="Client Quotes" />
-          <MenuItem closeMenu={closeMenu} name="Pricing and Plans" />
-          <MenuItem closeMenu={closeMenu} name="About" />
-          <MenuItem closeMenu={closeMenu} name="Contact" />
+          {menuItemData.map((name, index) => {
+            return (
+              <MenuItem
+                key={`menuItem-${index}`}
+                closeMenu={closeMenu}
+                name={name}
+              />
+            );
+          })}
         </ul>
       </div>
     </div>

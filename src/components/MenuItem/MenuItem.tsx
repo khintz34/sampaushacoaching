@@ -8,14 +8,7 @@ type Props = {
 
 export function MenuItem({ closeMenu, name }: Props) {
   return (
-    <Link
-      href={"/"}
-      style={{
-        textDecoration: "none",
-        fontStyle: "italic",
-      }}
-      as="/"
-    >
+    <Link href={"/"} className={styles.link} as="/">
       <li
         className={styles.menuItem}
         onClick={() => {

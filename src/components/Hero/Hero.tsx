@@ -16,14 +16,6 @@ export function Hero() {
 
   return (
     <main className={styles.main}>
-      {/* <div className={styles.header}>
-        <Logo />
-        <div className={styles.hamburgerIcon}>
-          <IconContext.Provider value={{ size: ICON_SIZE }}>
-            <FiMenu />
-          </IconContext.Provider>
-        </div>
-      </div> */}
       <Header />
       <div className={styles.imageWrapper}>
         <div className={`${styles.mobileImage} ${styles.image}`}>
