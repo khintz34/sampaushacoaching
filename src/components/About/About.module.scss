@@ -1,0 +1,26 @@
+.aboutMain {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.imageMain {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
+
+.imageLayout {
+  border-radius: 8px;
+  height: 300px;
+  width: 200px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.bottomImage {
+  transform: translate(-100px, 150px);
+  z-index: 2;
+}
