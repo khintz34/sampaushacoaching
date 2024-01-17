@@ -1,8 +1,11 @@
 .aboutMain {
-  height: 70vh;
+  padding-top: 24px;
+  height: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100vw;
+  flex-direction: row;
 }
 
 .imageMain {
@@ -23,4 +26,19 @@
 .bottomImage {
   transform: translate(-100px, 150px);
   z-index: 2;
+}
+
+.h3New {
+  color: var(--h2-font);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.h2 {
+  line-height: 80%;
+}
+
+.aboutParagraph {
+  width: 50vw;
+  margin-top: 24px;
 }
