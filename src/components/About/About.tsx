@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./About.module.scss";
-import ThumbsUp from "../../assets/images/ThumbsUpBikeVertical.jpg";
+import ThumbsUp from "../../assets/images/IMG_7866.jpg";
 import classNames from "classnames";
 import ArmsUp from "../../assets/images/DesMoinesArmsUp.jpg";
 import { Qualifications } from "../Qualifications/Qualifications";
