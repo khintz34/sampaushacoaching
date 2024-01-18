@@ -1,18 +1,22 @@
 .aboutMain {
-  padding-top: 24px;
-  height: auto;
+  padding: 24px 0;
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100vw;
   flex-direction: row;
+  min-height: 550px;
 }
 
 .imageMain {
-  height: auto;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 0;
+  padding-top: 24px;
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
 }
 
 .imageLayout {
@@ -38,7 +42,22 @@
   line-height: 80%;
 }
 
-.aboutParagraph {
+.aboutInfo {
   width: 50vw;
+
+  @media (max-width: 1023px) {
+    width: 90vw;
+  }
+}
+
+.aboutParagraph {
   margin-top: 24px;
+}
+
+.qualificationsContainer {
+  padding-top: 12px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
 }
