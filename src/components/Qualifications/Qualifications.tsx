@@ -1,7 +1,7 @@
 import styles from "./Qualifications.module.scss";
 
 type Props = {
-  Qualification: String;
+  Qualification: string;
 };
 
 export function Qualifications({ Qualification }: Props) {
