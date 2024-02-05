@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <Tagline />
       <ClientQuote />
-      {/* <About /> */}
+      <About />
     </main>
   );
 }

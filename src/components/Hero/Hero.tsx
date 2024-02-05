@@ -1,14 +1,8 @@
 "use client";
 import HeroDesktop from "../../assets/images/HeroDesktop.jpg";
-import MobileThree from "../../assets/images/mobileThree.jpg";
 import HeroMobile from "../../assets/images/MobileHerov1.jpg";
 import Image from "next/image";
 import styles from "./Hero.module.scss";
-import { FiMenu } from "react-icons/fi";
-import { IconContext } from "react-icons";
-import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
-import { Logo } from "../Logo/Logo";
 import Header from "../Header/Header";
 
 export function Hero() {

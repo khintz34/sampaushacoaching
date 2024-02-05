@@ -5,6 +5,7 @@
   --black-font: #000000;
   --h2-font: #373e40;
   --background-main: #eeece7;
+  --light-gray: #d9d9d9;
   --bar-width: 25px;
   --bar-height: 3px;
   --hamburger-gap: 5px;
@@ -42,10 +43,6 @@ h2 {
 
 p {
   color: var(--black-font);
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
-
-  @media (max-width: 1023px) {
-    font-size: 16px;
-  }
 }
