@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Hero />
-      <Tagline />
-      <ClientQuote />
       <About />
+      <ClientQuote />
+      <Tagline />
     </main>
   );
 }
