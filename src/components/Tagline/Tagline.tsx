@@ -11,7 +11,7 @@ export function Tagline() {
           Personalized coaching for dedicated, hands-on guidance and success.
         </p>
         <p className={styles.taglineParagrapgh}>
-          Or hit the ground running with a mostly self-guided standardize plan.
+          Or hit the ground running with a mostly self-guided standardized plan.
         </p>
       </div>
     </div>

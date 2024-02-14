@@ -36,11 +36,13 @@ export function Hero() {
         <div className={styles.overlay} />
       </div>
       <div className={styles.heroFooter}>
-        <div className={`${styles.red} ${styles.exerciseTypeTitle}`}>SWIM</div>
-        <div className={`${styles.white} ${styles.exerciseTypeTitle}`}>
+        <div className={`${styles.blue} ${styles.exerciseTypeTitle}`}>SWIM</div>
+        <div className={`${styles.yellow} ${styles.exerciseTypeTitle}`}>
           BIKE
         </div>
-        <div className={`${styles.blue} ${styles.exerciseTypeTitle}`}>RUN</div>
+        <div className={`${styles.orange} ${styles.exerciseTypeTitle}`}>
+          RUN
+        </div>
       </div>
     </main>
   );

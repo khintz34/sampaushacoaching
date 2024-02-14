@@ -37,15 +37,15 @@
   }
 }
 
-.red {
-  color: var(--red-font);
+.blue {
+  color: var(--blue-font);
   @media (max-width: 1023px) {
     text-align: left;
   }
 }
 
-.blue {
-  color: var(--blue-font);
+.yellow {
+  color: var(--yellow-font);
 
   @media (max-width: 1023px) {
     text-align: right;
@@ -55,7 +55,8 @@
   }
 }
 
-.white {
+.orange {
+  color: var(--orange-font);
   @media (max-width: 1023px) {
     text-align: center;
   }
