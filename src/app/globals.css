@@ -3,11 +3,15 @@
   --red-font: #ea1f1f;
   --blue-font: #01baef;
   --yellow-font: #f8d525;
+  --yellow-gradient: rgba(248, 213, 37, 0.2);
   --orange-font: #fb5012;
   --black-font: #000000;
-  --h2-font: #373e40;
+  --gray-color: #373e40;
   --background-main: #eeece7;
   --light-gray: #d9d9d9;
+  --light-brown: #eeece7;
+  --brown-border: rgba(238, 236, 231, 1);
+  --gray-gradient: rgba(55, 62, 64, 0.1);
   --bar-width: 25px;
   --bar-height: 3px;
   --hamburger-gap: 5px;
@@ -35,7 +39,7 @@ h1 {
 
 h2 {
   font-size: 56px;
-  color: var(--h2-font);
+  color: var(--gray-color);
   font-weight: 800;
 
   @media (max-width: 1023px) {
@@ -47,4 +51,10 @@ p {
   color: var(--black-font);
   font-size: 16px;
   font-weight: 400;
+}
+
+h4 {
+  color: var(--black-font);
+  font-size: 16px;
+  font-weight: 600;
 }

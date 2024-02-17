@@ -5,6 +5,7 @@ import { Tagline } from "@/components/Tagline/Tagline";
 import { ClientQuote } from "@/components/ClientQuote/ClientQuote";
 import { Quote } from "../components/Quote/Quote";
 import { About } from "@/components/About/About";
+import { PlanContainer } from "@/components/PlanContainer/PlanContainer";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <About />
       <ClientQuote />
       <Tagline />
+      <PlanContainer />
     </main>
   );
 }

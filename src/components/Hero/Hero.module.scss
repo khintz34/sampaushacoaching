@@ -48,17 +48,18 @@
   color: var(--yellow-font);
 
   @media (max-width: 1023px) {
-    text-align: right;
-    margin: 0;
-    padding: 0;
-    padding-right: 2vw;
+    text-align: center;
   }
 }
 
 .orange {
   color: var(--orange-font);
+
   @media (max-width: 1023px) {
-    text-align: center;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    padding-right: 2vw;
   }
 }
 
