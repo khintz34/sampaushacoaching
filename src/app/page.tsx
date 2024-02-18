@@ -5,6 +5,7 @@ import { Tagline } from "@/components/Tagline/Tagline";
 import { ClientQuote } from "@/components/ClientQuote/ClientQuote";
 import { Quote } from "../components/Quote/Quote";
 import { About } from "@/components/About/About";
+import { SwiperPlans } from "../components/SwiperPlans/SwiperPlans";
 import { PlanContainer } from "@/components/PlanContainer/PlanContainer";
 
 export default function Home() {
@@ -14,7 +15,12 @@ export default function Home() {
       <About />
       <ClientQuote />
       <Tagline />
-      <PlanContainer />
+      <div className={styles.desktop}>
+        <PlanContainer />
+      </div>
+      <div className={styles.mobile}>
+        <SwiperPlans />
+      </div>
     </main>
   );
 }

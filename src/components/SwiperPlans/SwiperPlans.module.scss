@@ -1,0 +1,19 @@
+.slide {
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (max-width: 1023px) {
+    height: 310px;
+  }
+}
+
+.swiper {
+  width: 100vw;
+  background-color: var(--primary-font);
+  border: 1px solid red;
+  @media (max-width: 1023px) {
+    border: none;
+  }
+}

@@ -3,6 +3,10 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1023px) {
+    padding: 30px 24px;
+  }
 }
 
 .taglineParagrapgh {

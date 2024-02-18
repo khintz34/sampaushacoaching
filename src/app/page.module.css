@@ -9,6 +9,18 @@
   width: 100vw;
   overflow: hidden;
 
-  /* todo remove this  */
+  /* todo remove this  after footer is created*/
   margin-bottom: 10vh;
+}
+
+.desktop {
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.mobile {
+  @media screen and (min-width: 1022px) {
+    display: none;
+  }
 }
