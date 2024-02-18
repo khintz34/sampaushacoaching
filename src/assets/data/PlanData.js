@@ -22,7 +22,7 @@ export const PlanData = [
     color: "var(--gray-gradient)",
   },
   {
-    name: "General Fitness Coaching",
+    name: "Marathon Coaching",
     attributes: [
       "Focus on half or full marathons",
       "Response within 72 hours",
@@ -31,7 +31,7 @@ export const PlanData = [
     color: "var(--gray-gradient)",
   },
   {
-    name: "General Fitness Coaching",
+    name: "Triathalon Coaching",
     attributes: [
       "Focus on Sprint or Olympic triathalons",
       "Response within 72 hours",

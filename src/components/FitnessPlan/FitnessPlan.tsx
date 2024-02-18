@@ -16,8 +16,8 @@ export function FitnessPlan({ planName, planAttributes, planColor }: Props) {
         {planAttributes.map((value, index) => {
           return (
             <div key={index} className={styles.planAttribute}>
-              <p className={styles.icon}>
-                <PiStarFourFill />
+              <p>
+                <PiStarFourFill className={styles.icon} />
               </p>
               <p>{value}</p>
             </div>
