@@ -7,6 +7,7 @@ import { Quote } from "../components/Quote/Quote";
 import { About } from "@/components/About/About";
 import { SwiperPlans } from "../components/SwiperPlans/SwiperPlans";
 import { PlanContainer } from "@/components/PlanContainer/PlanContainer";
+import { Footer } from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <div className={styles.mobile}>
         <SwiperPlans />
       </div>
+      <Footer />
     </main>
   );
 }
