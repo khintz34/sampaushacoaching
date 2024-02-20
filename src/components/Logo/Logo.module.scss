@@ -15,7 +15,7 @@
   line-height: 1;
 
   @media (max-width: 1023px) {
-    width: 50vw;
+    width: 55vw;
   }
 }
 
@@ -26,4 +26,8 @@
   flex-direction: column;
   justify-content: center;
   gap: 0vh;
+
+  @media (max-width: 1023px) {
+    width: 50vw;
+  }
 }

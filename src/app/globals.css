@@ -64,3 +64,11 @@ h5 {
   font-weight: 600;
   color: var(--primary-font);
 }
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

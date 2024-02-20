@@ -10,9 +10,14 @@ import {
   ABOUT_BIO,
 } from "../../assets/data/QualificationsData";
 
-export function About() {
+//! what type if a ref??
+type Props = {
+  passedRef: any;
+};
+
+export function About({ passedRef }: Props) {
   return (
-    <div className={styles.aboutMain}>
+    <div className={styles.aboutMain} ref={passedRef}>
       <div className={styles.imageMain}>
         <div className={styles.imageLayout}>
           <Image

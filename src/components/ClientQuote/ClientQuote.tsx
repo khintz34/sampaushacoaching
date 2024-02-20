@@ -5,9 +5,13 @@ import classNames from "classnames";
 import { Quote } from "../Quote/Quote";
 import { SwiperQuotes } from "../SwiperQuotes/SwiperQuotes";
 
-export function ClientQuote() {
+type Props = {
+  passedRef: any;
+};
+
+export function ClientQuote({ passedRef }: Props) {
   return (
-    <div className={styles.main}>
+    <div className={styles.main} ref={passedRef}>
       <SwiperQuotes />
 
       <div className={styles.imageWrapper}>
