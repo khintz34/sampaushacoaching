@@ -19,7 +19,7 @@ export function FitnessPlan({ planName, planAttributes, planColor }: Props) {
               <p>
                 <PiStarFourFill className={styles.icon} />
               </p>
-              <p>{value}</p>
+              <p className={styles.font14}>{value}</p>
             </div>
           );
         })}

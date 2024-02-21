@@ -57,6 +57,7 @@ h4 {
   color: var(--black-font);
   font-size: 16px;
   font-weight: 600;
+  letter-spacing: 0.1rem;
 }
 
 h5 {

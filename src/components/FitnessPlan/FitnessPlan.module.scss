@@ -1,8 +1,9 @@
 .main {
-  width: 311px;
+  width: 370px;
   border-radius: 24px;
   border: 1px solid var(--brown-border);
   padding: 24px;
+  min-height: 100px;
 
   @media (max-width: 1023px) {
     width: 350px;
@@ -15,11 +16,13 @@
   flex-direction: row;
   align-items: flex-start;
   gap: 5px;
-  line-height: 1;
+  line-height: 1.5;
+  color: var(--gray-color);
 }
 
 .icon {
-  fill: var(--black-font);
+  fill: var(--gray-color);
+  font-size: 12px;
 }
 
 .attributeContainer {
@@ -44,4 +47,8 @@
 
 .btn:active {
   transform: scale(1.1);
+}
+
+.font14 {
+  font-size: 14px;
 }
