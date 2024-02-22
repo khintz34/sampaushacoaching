@@ -28,11 +28,11 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <Hero passedRef={homeRef} />
+      <Hero />
       <About passedRef={aboutRef} />
       <ClientQuote passedRef={testimonialsRef} />
       <Tagline />
-      <div ref={plansRef}>
+      <div id="FitnessPlans">
         <div className={styles.desktop}>
           <PlanContainer />
         </div>

@@ -2,20 +2,9 @@ import classNames from "classnames";
 import { Logo } from "../Logo/Logo";
 import styles from "./Footer.module.scss";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FooterData } from "../../assets/data/FooterData";
 
-type Props = {
-  onClickAbout(event: React.MouseEvent<HTMLParagraphElement>): void;
-  onClickHome(event: React.MouseEvent<HTMLParagraphElement>): void;
-  onClickTestimonials(event: React.MouseEvent<HTMLParagraphElement>): void;
-  onClickPlans(event: React.MouseEvent<HTMLParagraphElement>): void;
-};
-
-export function Footer({
-  onClickAbout,
-  onClickHome,
-  onClickPlans,
-  onClickTestimonials,
-}: Props) {
+export function Footer() {
   return (
     <main className={styles.main}>
       <div className={styles.left}>
@@ -57,18 +46,13 @@ export function Footer({
         </div>
         <div className={classNames(styles.pagesSection, styles.rightSection)}>
           <h5>PAGES</h5>
-          <p className={styles.rightParagraph} onClick={onClickHome}>
-            Home
-          </p>
-          <p className={styles.rightParagraph} onClick={onClickAbout}>
-            About
-          </p>
-          <p className={styles.rightParagraph} onClick={onClickTestimonials}>
-            Testimonials
-          </p>
-          <p className={styles.rightParagraph} onClick={onClickPlans}>
-            Plans
-          </p>
+          {FooterData.map((value, index) => {
+            return (
+              <a href={value.ref} key={index}>
+                <p className={styles.rightParagraph}>{value.name}</p>
+              </a>
+            );
+          })}
         </div>
       </div>
     </main>

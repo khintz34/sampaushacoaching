@@ -5,15 +5,11 @@ import Image from "next/image";
 import styles from "./Hero.module.scss";
 import Header from "../Header/Header";
 
-type Props = {
-  passedRef: any;
-};
-
-export function Hero({ passedRef }: Props) {
+export function Hero() {
   const ICON_SIZE = "40px";
 
   return (
-    <main className={styles.main} ref={passedRef}>
+    <main className={styles.main} id="Home">
       <Header />
       <div className={styles.imageWrapper}>
         <div className={`${styles.mobileImage} ${styles.image}`}>
