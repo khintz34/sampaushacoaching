@@ -2,12 +2,11 @@ import styles from "./ClientQuote.module.scss";
 import finishLine from "../../assets/images/finishLine.jpg";
 import Image from "next/image";
 import classNames from "classnames";
-import { Quote } from "../Quote/Quote";
 import { SwiperQuotes } from "../SwiperQuotes/SwiperQuotes";
 
 export function ClientQuote() {
   return (
-    <div className={styles.main}>
+    <div className={styles.main} id="Testimonials">
       <SwiperQuotes />
 
       <div className={styles.imageWrapper}>

@@ -12,7 +12,7 @@ import {
 
 export function About() {
   return (
-    <div className={styles.aboutMain}>
+    <div className={styles.aboutMain} id="About">
       <div className={styles.imageMain}>
         <div className={styles.imageLayout}>
           <Image

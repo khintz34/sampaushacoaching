@@ -1,0 +1,12 @@
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 350px;
+}
+
+.swiper {
+  width: 100vw;
+  background-color: var(--primary-font);
+  border: none;
+}

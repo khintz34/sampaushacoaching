@@ -1,0 +1,72 @@
+.main {
+  margin-top: 5vh;
+  background-color: var(--gray-color);
+  padding: 24px 62px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (max-width: 1023px) {
+    padding: 24px;
+    flex-direction: column;
+    gap: 24px;
+    // align-items: center;
+  }
+}
+
+.left {
+  color: var(--primary-font);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @media (max-width: 1023px) {
+    align-items: flex-start;
+    width: 50vw;
+  }
+}
+
+.contactTypeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.contactType {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+
+.primaryFontSize {
+  color: var(--primary-font);
+  font-size: 12px;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+
+  @media (max-width: 1023px) {
+    justify-content: space-between;
+    gap: 50px;
+  }
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rightParagraph {
+  color: var(--primary-font);
+  font-size: 12px;
+}
+
+.rightParagraph:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

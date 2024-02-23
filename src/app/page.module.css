@@ -9,3 +9,15 @@
   width: 100vw;
   overflow: hidden;
 }
+
+.desktop {
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.mobile {
+  @media screen and (min-width: 1022px) {
+    display: none;
+  }
+}

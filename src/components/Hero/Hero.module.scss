@@ -37,27 +37,29 @@
   }
 }
 
-.red {
-  color: var(--red-font);
+.blue {
+  color: var(--blue-font);
   @media (max-width: 1023px) {
     text-align: left;
   }
 }
 
-.blue {
-  color: var(--blue-font);
+.yellow {
+  color: var(--yellow-font);
+
+  @media (max-width: 1023px) {
+    text-align: center;
+  }
+}
+
+.orange {
+  color: var(--orange-font);
 
   @media (max-width: 1023px) {
     text-align: right;
     margin: 0;
     padding: 0;
     padding-right: 2vw;
-  }
-}
-
-.white {
-  @media (max-width: 1023px) {
-    text-align: center;
   }
 }
 
