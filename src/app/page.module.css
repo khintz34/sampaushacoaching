@@ -10,14 +10,14 @@
   overflow: hidden;
 }
 
-.desktop {
-  @media (max-width: 1022px) {
+@media (max-width: 1022px) {
+  .desktop {
     display: none;
   }
 }
 
-.mobile {
-  @media (min-width: 1023px) {
+@media (min-width: 1023px) {
+  .mobile {
     display: none;
   }
 }
