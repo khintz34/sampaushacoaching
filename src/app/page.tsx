@@ -7,30 +7,13 @@ import { About } from "@/components/About/About";
 import { SwiperPlans } from "../components/SwiperPlans/SwiperPlans";
 import { PlanContainer } from "@/components/PlanContainer/PlanContainer";
 import { Footer } from "@/components/Footer/Footer";
-import { useRef } from "react";
-import { useInView } from "react-intersection-observer";
 
 export default function Home() {
-  const option = { threshold: 0.3 };
-  const aboutRef = useRef();
-  const homeRef = useRef();
-  const plansRef = useRef(null);
-  const testimonialsRef = useRef();
-
-  //! do I need these?
-  const [aboutRefView, aboutVis] = useInView(option);
-
-  //! type of this??
-  function scrollTo(el: any) {
-    let item = el.current;
-    item.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
   return (
     <main className={styles.main}>
       <Hero />
-      <About passedRef={aboutRef} />
-      <ClientQuote passedRef={testimonialsRef} />
+      <About />
+      <ClientQuote />
       <Tagline />
       <div id="FitnessPlans">
         <div className={styles.desktop}>
@@ -40,20 +23,7 @@ export default function Home() {
           <SwiperPlans />
         </div>
       </div>
-      <Footer
-        onClickAbout={() => {
-          scrollTo(aboutRef);
-        }}
-        onClickHome={() => {
-          scrollTo(homeRef);
-        }}
-        onClickTestimonials={() => {
-          scrollTo(testimonialsRef);
-        }}
-        onClickPlans={() => {
-          scrollTo(plansRef);
-        }}
-      />
+      <Footer />
     </main>
   );
 }
