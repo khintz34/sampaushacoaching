@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Logo } from "../Logo/Logo";
+import { NewLogo } from "../NewLogo/NewLogo";
 import styles from "./Footer.module.scss";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FooterData } from "../../assets/data/FooterData";
@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <main className={styles.main}>
       <div className={styles.left}>
-        <Logo />
+        <NewLogo />
         <div className={styles.contactTypeContainer}>
           <a
             className={styles.contactType}
