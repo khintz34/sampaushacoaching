@@ -4,7 +4,6 @@ import styles from "../Header/Header.module.scss";
 import Link from "next/link";
 import { useNavbarStore } from "@/stores/navbarStore";
 import { Logo } from "../Logo/Logo";
-import { NewLogo } from "../NewLogo/NewLogo";
 import { MenuItem } from "../MenuItem/MenuItem";
 import { menuItemData } from "../../assets/data/MenuItemData";
 import classNames from "classnames";
@@ -49,8 +48,7 @@ const Header = () => {
       )}
     >
       <Link href={"/"} className={styles.textDecorationNone}>
-        {/* <Logo /> */}
-        <NewLogo />
+        <Logo />
       </Link>
       <label className={styles.hamburgerMenu} htmlFor="hamburgerMenu">
         <input
