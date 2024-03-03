@@ -73,3 +73,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+span {
+  color: var(--black-font);
+}
