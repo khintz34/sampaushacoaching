@@ -15,16 +15,16 @@ export const PlanData = [
   {
     name: "General Fitness Coaching",
     attributes: [
-      "Focus on 5k or 10k races",
+      "Focus on improving general strength and endurance",
       "Response within 72 hours",
       "Training calendar",
     ],
     color: "var(--gray-gradient)",
   },
   {
-    name: "Marathon Coaching",
+    name: "Run Coaching",
     attributes: [
-      "Focus on half or full marathons",
+      "Focus on 5K, 10K, and half or full marathons",
       "Response within 72 hours",
       "Training calendar",
     ],

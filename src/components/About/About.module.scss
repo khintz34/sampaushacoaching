@@ -52,6 +52,11 @@
 
 .aboutParagraph {
   margin-top: 24px;
+  color: var(--black-font);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  white-space: pre-wrap;
 }
 
 .qualificationsContainer {
