@@ -38,16 +38,7 @@ export function About() {
           <h3 className={styles.h3New}>Triathalon Coaching</h3>
           <h2 className={styles.h2}>Sam Pausha</h2>
         </div>
-        <p className={styles.aboutParagraph}>
-          {ABOUT_BIO.split("\n").map((line, index) => {
-            return (
-              <span key={index}>
-                {line}
-                <br />
-              </span>
-            );
-          })}
-        </p>
+        <p className={styles.aboutParagraph}>{ABOUT_BIO}</p>
         <div className={styles.qualificationsContainer}>
           {QUALIFICATIONS_DATA.map((qualification, index) => {
             return (
