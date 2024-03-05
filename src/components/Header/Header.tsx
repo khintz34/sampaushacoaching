@@ -8,16 +8,23 @@ import { MenuItem } from "../MenuItem/MenuItem";
 import { menuItemData } from "../../assets/data/MenuItemData";
 import classNames from "classnames";
 
-const Header = () => {
+type Props = {
+  permanentBgColor: boolean;
+  scrollValue: number;
+};
+
+const Header = ({ permanentBgColor, scrollValue }: Props) => {
   const navbarStatus = useNavbarStore((state) => state.navbarStatus);
   const changeNavbarStatus = useNavbarStore(
     (state) => state.changeNavbarStatus
   );
   const checkRef = useRef<HTMLInputElement>(null);
-  const [color, setColor] = useState<boolean>(false);
+  const [color, setColor] = useState<boolean>(permanentBgColor);
   const changeColor = () => {
-    setColor(window.scrollY >= 200);
+    setColor(window.scrollY >= scrollValue);
   };
+
+  console.log(color);
 
   useEffect(() => {
     window.addEventListener("scroll", changeColor);
