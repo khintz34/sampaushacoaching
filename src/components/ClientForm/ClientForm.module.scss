@@ -1,0 +1,45 @@
+.main {
+  background-color: var(--light-brown);
+  border-radius: 25px;
+  width: 793px;
+  margin-top: 36px;
+  padding: 36px;
+
+  @media (max-width: 1022px) {
+    width: calc(100vw - 24px);
+  }
+}
+
+.formHeader {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.inputFieldContainer {
+  display: flex;
+  flex-direction: column;
+  width: 319px;
+  height: 90px;
+  gap: 7px;
+  margin-bottom: 36px;
+}
+
+.sideBySide {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+
+  @media (max-width: 1022px) {
+    flex-direction: column;
+  }
+}
+
+.btn {
+  color: var(--primary-font);
+  border-radius: 45px;
+  width: 132px;
+  height: 54px;
+  font-size: 20px;
+  font-weight: 600px;
+  background-color: var(--gray-color);
+}
