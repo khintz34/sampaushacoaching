@@ -6,7 +6,8 @@
   padding: 36px;
 
   @media (max-width: 1022px) {
-    width: calc(100vw - 24px);
+    // width: calc(100vw - 24px);
+    width: 100vw;
   }
 }
 
@@ -43,4 +44,16 @@
   font-size: 20px;
   font-weight: 600px;
   background-color: var(--gray-color);
+}
+
+.textAreaContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 36px;
+}
+
+.textarea {
+  height: 20ch;
+  border-radius: 8px;
+  border: none;
 }

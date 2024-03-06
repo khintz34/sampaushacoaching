@@ -11,6 +11,10 @@
 
 .formParagraph {
   font-size: 24px;
+
+  @media (max-width: 1022px) {
+    padding: 0 12px;
+  }
 }
 
 .formContainer {
@@ -19,10 +23,14 @@
   flex-direction: column;
 
   @media (max-width: 1022px) {
-    padding: 12px;
+    padding: 12px 0 0 0;
   }
 }
 
 .formHeading {
   font-weight: 900;
+
+  @media (max-width: 1022px) {
+    padding: 12px;
+  }
 }

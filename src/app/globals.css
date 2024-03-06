@@ -81,10 +81,16 @@ label {
   font-size: 24px;
 }
 
-input {
+input,
+select,
+option {
   line-height: 56px;
   border-radius: 8px;
   width: 319px;
+  color: var(--gray-color);
+  font-size: 20px;
+  padding-left: 10px;
+  border: none;
 }
 
 input[type="email"] {
@@ -93,8 +99,15 @@ input[type="email"] {
   width: 700px;
 }
 
+select {
+  width: 700px;
+  height: 56px;
+}
+
 @media (max-width: 1023px) {
-  input[type="email"] {
+  input[type="email"],
+  select,
+  option {
     width: 319px;
   }
 }
