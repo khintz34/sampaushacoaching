@@ -73,6 +73,8 @@ export function ClientForm() {
           name="personalGoals"
           id="personalGoals"
           className={styles.textarea}
+          defaultValue={goals}
+          onChange={(e) => setGoals(e.target.value)}
         />
       </div>
       <div className={styles.textAreaContainer}>
@@ -83,6 +85,8 @@ export function ClientForm() {
           name="coachGoals"
           id="coachGoals"
           className={styles.textarea}
+          defaultValue={coachGoals}
+          onChange={(e) => setCoachGoals(e.target.value)}
         />
       </div>
 
