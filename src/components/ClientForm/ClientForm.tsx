@@ -9,7 +9,7 @@ export function ClientForm() {
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>();
   const [email, setEmail] = useState<string>();
-  const [trainingFor, setTrainingFor] = useState<string>();
+  const [trainingFor, setTrainingFor] = useState<any>({});
   const [currentDaysWeek, setCurrentDaysWeek] = useState<string>();
   const [futureDaysWeek, setFutureDaysWeek] = useState<string>();
   const [currentFitness, setCurrentFitness] = useState<string>();
@@ -20,8 +20,34 @@ export function ClientForm() {
   const [goals, setGoals] = useState<string>();
   const [coachGoals, setCoachGoals] = useState<string>();
 
-  // todo finish setting up state
+  // todo finish setting up state for dropdowns
   //todo think about how to set up yesInjuries
+
+  function handleChange(val: string, id: string) {
+    switch (id) {
+      case "trainingFor":
+        setTrainingFor(val);
+        break;
+      case "futureDaysAWeek":
+        setFutureDaysWeek(val);
+        break;
+      case "currentDaysAWeek":
+        setCurrentDaysWeek(val);
+        break;
+      case "currentFitness":
+        setCurrentFitness(val);
+        break;
+      case "injuries":
+        setInjuries(val);
+        break;
+      case "favoriteExercise":
+        setFavorite(val);
+        break;
+      case "commonExercise":
+        setMostOften(val);
+        break;
+    }
+  }
 
   return (
     <form className={styles.main}>
@@ -62,7 +88,7 @@ export function ClientForm() {
         />
       </div>
       {ClientFormDataDropdowns.map((item, index) => {
-        return <Dropdown item={item} key={index} />;
+        return <Dropdown item={item} key={index} changeEvent={handleChange} />;
       })}
       <div className={styles.textAreaContainer}>
         <label htmlFor="personalGoals">

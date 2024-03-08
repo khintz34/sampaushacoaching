@@ -7,14 +7,17 @@ export const ClientFormDataDropdowns = [
       "Triathalon Event (Sprint - IRONMAN)",
       "Other",
     ],
+    id: "trainingFor",
   },
   {
     question: "How many days a week do you exercise currently?",
     options: [0, 1, 2, 3, 4, 5, 6, 7],
+    id: "currentDaysAWeek",
   },
   {
     question: "How many days a week do you want to exercise during the plan?",
     options: [0, 1, 2, 3, 4, 5, 6, 7],
+    id: "futureDaysAWeek",
   },
   {
     question: "How would you describe your fitness level on a scale of 1-5?",
@@ -25,11 +28,13 @@ export const ClientFormDataDropdowns = [
       4,
       "5: best shape of your life",
     ],
+    id: "currentFitness",
   },
 
   {
     question: "Have you had any injuries, or do you have any injuries?",
     options: ["no", "yes"],
+    id: "injuries",
   },
   {
     question: "What is your favorite type of exercise?",
@@ -44,6 +49,7 @@ export const ClientFormDataDropdowns = [
       "Interval",
       "Cross Training",
     ],
+    id: "favoriteExercise",
   },
   {
     question: "What type of exercise do you do most often?",
@@ -58,6 +64,7 @@ export const ClientFormDataDropdowns = [
       "Interval",
       "Cross Training",
     ],
+    id: "commonExercise",
   },
 ];
 

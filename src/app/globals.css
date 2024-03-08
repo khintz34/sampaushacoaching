@@ -111,3 +111,10 @@ select {
     width: 319px;
   }
 }
+
+textarea {
+  color: var(--gray-color);
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+}

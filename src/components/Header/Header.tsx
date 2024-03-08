@@ -24,8 +24,6 @@ const Header = ({ permanentBgColor, scrollValue }: Props) => {
     setColor(window.scrollY >= scrollValue);
   };
 
-  console.log(color);
-
   useEffect(() => {
     window.addEventListener("scroll", changeColor);
   }, []);
