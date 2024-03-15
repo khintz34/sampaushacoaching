@@ -4,10 +4,7 @@ import { mailOptions, transporter } from "@/assets/apiLib/nodemailer";
 
 export async function POST(req, res) {
   const body = await req.json();
-  console.log(body);
   const reqArray = body.split(",");
-  const name = reqArray[0].toString();
-  console.log(name);
 
   try {
     await transporter.sendMail({
@@ -30,7 +27,6 @@ export async function POST(req, res) {
     });
     return NextResponse.json({ message: "Yay" });
   } catch (error) {
-    console.log(error);
     return NextResponse.json({ message: error.message });
   }
 }

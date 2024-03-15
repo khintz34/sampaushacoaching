@@ -3,7 +3,7 @@
 import styles from "./ClientForm.module.scss";
 import { ClientFormDataDropdowns } from "../../assets/data/ClientFormData";
 import { Dropdown } from "../Dropdown/Dropdown";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { sendContactForm } from "@/assets/apiLib/api";
 
 export function ClientForm() {
@@ -52,7 +52,6 @@ export function ClientForm() {
   }
 
   const onSubmit = async (e: any) => {
-    e.preventDefault();
     const passingArray = [
       name,
       phone,
