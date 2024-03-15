@@ -30,12 +30,6 @@ export const ClientFormDataDropdowns = [
     ],
     id: "currentFitness",
   },
-
-  {
-    question: "Have you had any injuries, or do you have any injuries?",
-    options: ["no", "yes"],
-    id: "injuries",
-  },
   {
     question: "What is your favorite type of exercise?",
     options: [
@@ -65,6 +59,11 @@ export const ClientFormDataDropdowns = [
       "Cross Training",
     ],
     id: "commonExercise",
+  },
+  {
+    question: "Have you had any injuries, or do you have any injuries?",
+    options: ["No", "Yes"],
+    id: "injuries",
   },
 ];
 

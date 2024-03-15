@@ -4,24 +4,26 @@ import styles from "./ClientForm.module.scss";
 import { ClientFormDataDropdowns } from "../../assets/data/ClientFormData";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { useEffect, useState } from "react";
+import { sendContactForm } from "@/assets/apiLib/api";
 
 export function ClientForm() {
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>();
   const [email, setEmail] = useState<string>();
-  const [trainingFor, setTrainingFor] = useState<any>({});
-  const [currentDaysWeek, setCurrentDaysWeek] = useState<string>();
-  const [futureDaysWeek, setFutureDaysWeek] = useState<string>();
-  const [currentFitness, setCurrentFitness] = useState<string>();
-  const [injuries, setInjuries] = useState<string>();
+  const [trainingFor, setTrainingFor] = useState<string>(
+    "General Health and Fitness"
+  );
+  const [currentDaysWeek, setCurrentDaysWeek] = useState<string>("0");
+  const [futureDaysWeek, setFutureDaysWeek] = useState<string>("0");
+  const [currentFitness, setCurrentFitness] = useState<string>(
+    "1: relatively out of shape"
+  );
+  const [injuries, setInjuries] = useState<string>("No");
   const [yesInjuries, setYesInjuries] = useState<string>();
-  const [favorite, setFavorite] = useState<string>();
-  const [mostOften, setMostOften] = useState<string>();
+  const [favorite, setFavorite] = useState<string>("Cardio");
+  const [mostOften, setMostOften] = useState<string>("Cardio");
   const [goals, setGoals] = useState<string>();
   const [coachGoals, setCoachGoals] = useState<string>();
-
-  // todo finish setting up state for dropdowns
-  //todo think about how to set up yesInjuries
 
   function handleChange(val: string, id: string) {
     switch (id) {
@@ -48,6 +50,26 @@ export function ClientForm() {
         break;
     }
   }
+
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
+    const passingArray = [
+      name,
+      phone,
+      email,
+      trainingFor,
+      currentDaysWeek,
+      futureDaysWeek,
+      currentFitness,
+      injuries,
+      yesInjuries,
+      favorite,
+      mostOften,
+      goals,
+      coachGoals,
+    ];
+    await sendContactForm(passingArray.toString());
+  };
 
   return (
     <form className={styles.main}>
@@ -90,6 +112,19 @@ export function ClientForm() {
       {ClientFormDataDropdowns.map((item, index) => {
         return <Dropdown item={item} key={index} changeEvent={handleChange} />;
       })}
+
+      <div
+        className={injuries === "Yes" ? styles.textAreaContainer : styles.hide}
+      >
+        <label htmlFor="yesInjuries">Please describe your injury</label>
+        <textarea
+          name="yesInjuries"
+          id="yesInjuryes"
+          className={styles.textarea}
+          defaultValue={yesInjuries}
+          onChange={(e) => setYesInjuries(e.target.value)}
+        />
+      </div>
       <div className={styles.textAreaContainer}>
         <label htmlFor="personalGoals">
           What are your goals? (Is there a specific race you are training for,
@@ -116,7 +151,9 @@ export function ClientForm() {
         />
       </div>
 
-      <button className={styles.btn}>Submit</button>
+      <button className={styles.btn} onClick={(e) => onSubmit(e)}>
+        Submit
+      </button>
     </form>
   );
 }
