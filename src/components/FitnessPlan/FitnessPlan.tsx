@@ -24,7 +24,14 @@ export function FitnessPlan({ planName, planAttributes, planColor }: Props) {
           );
         })}
       </div>
-      <button className={styles.btn}>Learn More</button>
+      <button
+        className={styles.btn}
+        onClick={() =>
+          window.open("https://www.sampaushacoaching.com/NewClientForm")
+        }
+      >
+        Learn More
+      </button>
     </main>
   );
 }
