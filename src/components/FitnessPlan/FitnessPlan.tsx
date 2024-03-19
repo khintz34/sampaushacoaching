@@ -27,7 +27,7 @@ export function FitnessPlan({ planName, planAttributes, planColor }: Props) {
       <button
         className={styles.btn}
         onClick={() =>
-          window.open("https://www.sampaushacoaching.com/NewClientForm")
+          (location.href = "https://www.sampaushacoaching.com/NewClientForm")
         }
       >
         Learn More

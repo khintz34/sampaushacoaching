@@ -1,7 +1,7 @@
 "use client";
 import HeroDesktop from "../../assets/images/HeroDesktop.jpg";
 import HeroMobile from "../../assets/images/MobileHerov1.jpg";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "./Hero.module.scss";
 import Header from "../Header/Header";
 

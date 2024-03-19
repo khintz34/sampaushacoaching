@@ -83,6 +83,7 @@ export function ClientForm() {
             className={styles.inputHeight}
             defaultValue={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </div>
         <div className={styles.inputFieldContainer}>
@@ -94,6 +95,7 @@ export function ClientForm() {
             className={styles.inputHeight}
             defaultValue={phone}
             onChange={(e) => setPhone(e.target.value)}
+            required
           />
         </div>
       </div>
@@ -106,6 +108,7 @@ export function ClientForm() {
           className={styles.inputHeight}
           defaultValue={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
       </div>
       {ClientFormDataDropdowns.map((item, index) => {
@@ -122,6 +125,7 @@ export function ClientForm() {
           className={styles.textarea}
           defaultValue={yesInjuries}
           onChange={(e) => setYesInjuries(e.target.value)}
+          required={injuries === "Yes"}
         />
       </div>
       <div className={styles.textAreaContainer}>
@@ -135,6 +139,7 @@ export function ClientForm() {
           className={styles.textarea}
           defaultValue={goals}
           onChange={(e) => setGoals(e.target.value)}
+          required
         />
       </div>
       <div className={styles.textAreaContainer}>
@@ -147,6 +152,7 @@ export function ClientForm() {
           className={styles.textarea}
           defaultValue={coachGoals}
           onChange={(e) => setCoachGoals(e.target.value)}
+          required
         />
       </div>
 

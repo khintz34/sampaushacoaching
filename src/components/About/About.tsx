@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "./About.module.scss";
 import ThumbsUpImageSrc from "../../assets/images/ThumbsUpBike.jpg";
 import classNames from "classnames";
