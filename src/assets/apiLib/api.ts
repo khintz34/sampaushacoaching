@@ -7,5 +7,5 @@ export const sendContactForm = async (data: any) => {
       Accept: "application/json",
     },
   });
-  location.href = "http://localhost:3000";
+  location.href = "https://www.sampaushacoaching.com/";
 };
