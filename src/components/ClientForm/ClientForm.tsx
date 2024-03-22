@@ -52,6 +52,7 @@ export function ClientForm() {
   }
 
   const onSubmit = async (e: any) => {
+    e.preventDefault();
     const passingArray = [
       name,
       phone,

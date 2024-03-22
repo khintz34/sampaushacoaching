@@ -1,5 +1,4 @@
 export const sendContactForm = async (data: any) => {
-  console.log(data);
   fetch("/api/Contact", {
     method: "POST",
     body: JSON.stringify(data),
@@ -8,4 +7,5 @@ export const sendContactForm = async (data: any) => {
       Accept: "application/json",
     },
   });
+  location.href = "http://localhost:3000";
 };
