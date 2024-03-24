@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./FitnessPlan.module.scss";
 import { PiStarFourFill } from "react-icons/pi";
 
@@ -24,14 +25,9 @@ export function FitnessPlan({ planName, planAttributes, planColor }: Props) {
           );
         })}
       </div>
-      <button
-        className={styles.btn}
-        onClick={() =>
-          (location.href = "https://www.sampaushacoaching.com/NewClientForm")
-        }
-      >
-        Learn More
-      </button>
+      <Link href={"/NewClientForm"}>
+        <button className={styles.btn}>Learn More</button>
+      </Link>
     </main>
   );
 }

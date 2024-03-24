@@ -6,7 +6,7 @@ import { ClientForm } from "@/components/ClientForm/ClientForm";
 export default function NewClientForm() {
   return (
     <main className={styles.main}>
-      <Header permanentBgColor={true} scrollValue={0} />
+      <Header backgroundColorSwitch={true} scrollValue={0} />
       <div className={styles.formContainer}>
         <h2 className={styles.formHeading}>Ready to Take Charge?</h2>
         <p className={styles.formParagraph}>

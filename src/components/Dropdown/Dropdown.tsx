@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import styles from "./Dropdown.module.scss";
 
 interface Props {
@@ -9,18 +8,16 @@ interface Props {
     options: Array<string | number>;
     id: string;
   };
-  changeEvent: Function;
+  updateSelectOption: Function;
 }
 
-// todo need to add a feature to show hide based on data passed in...
-
-export function Dropdown({ item, changeEvent }: Props) {
+export function Dropdown({ item, updateSelectOption }: Props) {
   return (
     <div className={styles.dropdown} id={item.id}>
       <label>{item.question}</label>
       <select
         onChange={(e) => {
-          changeEvent(e.target.value, item.id);
+          updateSelectOption(e.target.value, item.id);
         }}
         defaultValue={item.options[0]}
         className={styles.select}

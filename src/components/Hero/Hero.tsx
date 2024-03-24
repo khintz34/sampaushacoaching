@@ -10,7 +10,7 @@ export function Hero() {
 
   return (
     <main className={styles.main} id="Home">
-      <Header permanentBgColor={false} scrollValue={200} />
+      <Header backgroundColorSwitch={false} scrollValue={200} />
       <div className={styles.imageWrapper}>
         <div className={`${styles.mobileImage} ${styles.image}`}>
           <Image

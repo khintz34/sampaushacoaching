@@ -5,6 +5,7 @@ import { ClientFormDataDropdowns } from "../../assets/data/ClientFormData";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { useState } from "react";
 import { sendContactForm } from "@/assets/apiLib/api";
+import classNames from "classnames";
 
 export function ClientForm() {
   const [name, setName] = useState<string>("");
@@ -113,11 +114,15 @@ export function ClientForm() {
         />
       </div>
       {ClientFormDataDropdowns.map((item, index) => {
-        return <Dropdown item={item} key={index} changeEvent={handleChange} />;
+        return (
+          <Dropdown key={index} item={item} updateSelectOption={handleChange} />
+        );
       })}
 
       <div
-        className={injuries === "Yes" ? styles.textAreaContainer : styles.hide}
+        className={classNames(
+          injuries === "Yes" ? styles.textAreaContainer : styles.hide
+        )}
       >
         <label htmlFor="yesInjuries">Please describe your injury</label>
         <textarea

@@ -9,17 +9,22 @@ import { menuItemData } from "../../assets/data/MenuItemData";
 import classNames from "classnames";
 
 type Props = {
-  permanentBgColor: boolean;
+  backgroundColorSwitch: boolean;
   scrollValue: number;
 };
 
-const Header = ({ permanentBgColor, scrollValue }: Props) => {
+const BACKGROUND_COLOR_SCROLL_HEIGHT = 200;
+
+const Header = ({
+  backgroundColorSwitch = false,
+  scrollValue = BACKGROUND_COLOR_SCROLL_HEIGHT,
+}: Props) => {
   const navbarStatus = useNavbarStore((state) => state.navbarStatus);
   const changeNavbarStatus = useNavbarStore(
     (state) => state.changeNavbarStatus
   );
   const checkRef = useRef<HTMLInputElement>(null);
-  const [color, setColor] = useState<boolean>(permanentBgColor);
+  const [color, setColor] = useState<boolean>(backgroundColorSwitch);
   const changeColor = () => {
     setColor(window.scrollY >= scrollValue);
   };

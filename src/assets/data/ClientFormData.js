@@ -1,5 +1,6 @@
 export const ClientFormDataDropdowns = [
   {
+    id: "trainingFor",
     question: "What are you training for?",
     options: [
       "General Health and Fitness",
@@ -7,19 +8,19 @@ export const ClientFormDataDropdowns = [
       "Triathalon Event (Sprint - IRONMAN)",
       "Other",
     ],
-    id: "trainingFor",
   },
   {
+    id: "currentDaysAWeek",
     question: "How many days a week do you exercise currently?",
     options: [0, 1, 2, 3, 4, 5, 6, 7],
-    id: "currentDaysAWeek",
   },
   {
+    id: "futureDaysAWeek",
     question: "How many days a week do you want to exercise during the plan?",
     options: [0, 1, 2, 3, 4, 5, 6, 7],
-    id: "futureDaysAWeek",
   },
   {
+    id: "currentFitness",
     question: "How would you describe your fitness level on a scale of 1-5?",
     options: [
       "1: relatively out of shape",
@@ -28,9 +29,9 @@ export const ClientFormDataDropdowns = [
       4,
       "5: best shape of your life",
     ],
-    id: "currentFitness",
   },
   {
+    id: "favoriteExercise",
     question: "What is your favorite type of exercise?",
     options: [
       "Cardio",
@@ -43,9 +44,9 @@ export const ClientFormDataDropdowns = [
       "Interval",
       "Cross Training",
     ],
-    id: "favoriteExercise",
   },
   {
+    id: "commonExercise",
     question: "What type of exercise do you do most often?",
     options: [
       "Cardio",
@@ -58,20 +59,19 @@ export const ClientFormDataDropdowns = [
       "Interval",
       "Cross Training",
     ],
-    id: "commonExercise",
   },
   {
+    id: "injuries",
     question: "Have you had any injuries, or do you have any injuries?",
     options: ["No", "Yes"],
-    id: "injuries",
   },
 ];
 
 export const ClientFormDataTexts = [
   {
+    id: "personalGoals",
     question:
       "What are your goals? (Is there a specific race you are training for, etc.?)",
-    id: "personalGoals",
   },
-  { question: "What are your goals working with a coach?", id: "coachGoals" },
+  { id: "coachGoals", question: "What are your goals working with a coach?" },
 ];
