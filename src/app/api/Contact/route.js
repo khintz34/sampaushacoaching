@@ -5,24 +5,39 @@ import { mailOptions, transporter } from "@/assets/apiLib/nodemailer";
 export async function POST(req, res) {
   const body = await req.json();
   const reqArray = body.split(",");
+  const [
+    name,
+    number,
+    email,
+    trainingFor,
+    currentDaysAWeek,
+    futureDaysAWeek,
+    currentFitness,
+    favoriteExercise,
+    commonExercise,
+    injuries,
+    yesInjuries,
+    goals,
+    coachGoals,
+  ] = reqArray;
 
   try {
     await transporter.sendMail({
       ...mailOptions,
-      subject: `New Client Questionnaire: ${reqArray[0]}`,
-      html: `<p>Name: ${reqArray[0]} </p>
-      <p>Number: ${reqArray[1]} </p>
-      <p>Email: ${reqArray[2]} </p>
-      <p>Training For: ${reqArray[3]} </p>
-      <p>Current Days of Excercise: ${reqArray[4]} </p>
-      <p>Days of Exercise During Training: ${reqArray[5]} </p>
-      <p>Current Fitness Level: ${reqArray[6]} </p>
-      <p>Favorite Exercise: ${reqArray[7]} </p>
-      <p>Most Common Exercise: ${reqArray[8]} </p>
-      <p>Have you had injuries: ${reqArray[9]} </p>
-      <p>Injury Details: ${reqArray[10]} </p>
-      <p>What are your goals: ${reqArray[11]} </p>
-      <p>What are your goals with a coach: ${reqArray[12]} </p> 
+      subject: `New Client Questionnaire: ${name}`,
+      html: `<p>Name: ${name} </p>
+      <p>Number: ${number} </p>
+      <p>Email: ${email} </p>
+      <p>Training For: ${trainingFor} </p>
+      <p>Current Days of Excercise: ${currentDaysAWeek} </p>
+      <p>Days of Exercise During Training: ${futureDaysAWeek} </p>
+      <p>Current Fitness Level: ${currentFitness} </p>
+      <p>Favorite Exercise: ${favoriteExercise} </p>
+      <p>Most Common Exercise: ${commonExercise} </p>
+      <p>Have you had injuries: ${injuries} </p>
+      <p>Injury Details: ${yesInjuries} </p>
+      <p>What are your goals: ${goals} </p>
+      <p>What are your goals with a coach: ${coachGoals} </p> 
       `,
     });
     return NextResponse.json({ message: "Yay" });

@@ -75,3 +75,36 @@ export const ClientFormDataTexts = [
   },
   { id: "coachGoals", question: "What are your goals working with a coach?" },
 ];
+
+export const ClientFormDropDownOptionsArray = [
+  {
+    id: "trainingFor",
+    val: "General Health and Fitness",
+  },
+  {
+    id: "currentDaysAWeek",
+    val: 0,
+  },
+  {
+    id: "futureDaysAWeek",
+
+    val: 0,
+  },
+  {
+    id: "currentFitness",
+
+    val: "1: relatively out of shape",
+  },
+  {
+    id: "favoriteExercise",
+    val: "Cardio",
+  },
+  {
+    id: "commonExercise",
+    val: "Cardio",
+  },
+  {
+    id: "injuries",
+    val: "No",
+  },
+];

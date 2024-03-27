@@ -2,54 +2,41 @@
 
 import styles from "./ClientForm.module.scss";
 import { ClientFormDataDropdowns } from "../../assets/data/ClientFormData";
+import { ClientFormDropDownOptionsArrayTest } from "@/assets/data/ClientFormDropDownOptions";
 import { Dropdown } from "../Dropdown/Dropdown";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { sendContactForm } from "@/assets/apiLib/api";
 import classNames from "classnames";
+import { useRouter } from "next/navigation";
+import { Injuries } from "@/assets/data/ClientFormResponses";
+
+type DropDownOptionsType = {
+  trainingFor: string;
+  currentDaysAWeek: number;
+  futureDaysAWeek: number;
+  currentFitness: string | number;
+  favoriteExercise: string;
+  commonExercise: string;
+  injuries: string;
+};
 
 export function ClientForm() {
+  const router = useRouter();
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>();
   const [email, setEmail] = useState<string>();
-  const [trainingFor, setTrainingFor] = useState<string>(
-    "General Health and Fitness"
-  );
-  const [currentDaysWeek, setCurrentDaysWeek] = useState<string>("0");
-  const [futureDaysWeek, setFutureDaysWeek] = useState<string>("0");
-  const [currentFitness, setCurrentFitness] = useState<string>(
-    "1: relatively out of shape"
-  );
-  const [injuries, setInjuries] = useState<string>("No");
   const [yesInjuries, setYesInjuries] = useState<string>();
-  const [favorite, setFavorite] = useState<string>("Cardio");
-  const [mostOften, setMostOften] = useState<string>("Cardio");
   const [goals, setGoals] = useState<string>();
   const [coachGoals, setCoachGoals] = useState<string>();
+  const [disabled, setDisabled] = useState<boolean>(true);
+  const [dropDownOptions, setDropDownOptions] = useState<DropDownOptionsType>(
+    ClientFormDropDownOptionsArrayTest
+  );
 
   function handleChange(val: string, id: string) {
-    switch (id) {
-      case "trainingFor":
-        setTrainingFor(val);
-        break;
-      case "futureDaysAWeek":
-        setFutureDaysWeek(val);
-        break;
-      case "currentDaysAWeek":
-        setCurrentDaysWeek(val);
-        break;
-      case "currentFitness":
-        setCurrentFitness(val);
-        break;
-      case "injuries":
-        setInjuries(val);
-        break;
-      case "favoriteExercise":
-        setFavorite(val);
-        break;
-      case "commonExercise":
-        setMostOften(val);
-        break;
-    }
+    setDropDownOptions((prev: any) => {
+      return { ...prev, [id]: val };
+    });
   }
 
   const onSubmit = async (e: any) => {
@@ -58,19 +45,39 @@ export function ClientForm() {
       name,
       phone,
       email,
-      trainingFor,
-      currentDaysWeek,
-      futureDaysWeek,
-      currentFitness,
-      injuries,
+      dropDownOptions.trainingFor,
+      dropDownOptions.currentDaysAWeek,
+      dropDownOptions.futureDaysAWeek,
+      dropDownOptions.currentFitness,
+      dropDownOptions.favoriteExercise,
+      dropDownOptions.commonExercise,
+      dropDownOptions.injuries,
       yesInjuries,
-      favorite,
-      mostOften,
       goals,
       coachGoals,
     ];
-    await sendContactForm(passingArray.toString());
+
+    await sendContactForm(passingArray.toString()).then(() => router.push("/"));
   };
+
+  useEffect(() => {
+    const reg = new RegExp("[^@s]+@[^@s]+.[^@s]+");
+    const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    if (
+      name === "" ||
+      name === undefined ||
+      phone === "" ||
+      phone === undefined ||
+      !phoneRegex.test(phone) ||
+      email === "" ||
+      email === undefined ||
+      !reg.test(email)
+    ) {
+      setDisabled(true);
+    } else {
+      setDisabled(false);
+    }
+  }, [name, phone, email]);
 
   return (
     <form className={styles.main}>
@@ -111,6 +118,7 @@ export function ClientForm() {
           defaultValue={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
         />
       </div>
       {ClientFormDataDropdowns.map((item, index) => {
@@ -121,7 +129,9 @@ export function ClientForm() {
 
       <div
         className={classNames(
-          injuries === "Yes" ? styles.textAreaContainer : styles.hide
+          dropDownOptions.injuries === Injuries.Yes
+            ? styles.textAreaContainer
+            : styles.hide
         )}
       >
         <label htmlFor="yesInjuries">Please describe your injury</label>
@@ -131,7 +141,7 @@ export function ClientForm() {
           className={styles.textarea}
           defaultValue={yesInjuries}
           onChange={(e) => setYesInjuries(e.target.value)}
-          required={injuries === "Yes"}
+          required={dropDownOptions.injuries === Injuries.Yes}
         />
       </div>
       <div className={styles.textAreaContainer}>
@@ -162,7 +172,11 @@ export function ClientForm() {
         />
       </div>
 
-      <button className={styles.btn} onClick={(e) => onSubmit(e)}>
+      <button
+        className={classNames(disabled ? styles.disabled : styles.btn)}
+        onClick={(e) => onSubmit(e)}
+        disabled={disabled}
+      >
         Submit
       </button>
     </form>
