@@ -2,7 +2,7 @@
 
 import styles from "./ClientForm.module.scss";
 import { ClientFormDataDropdowns } from "../../assets/data/ClientFormData";
-import { ClientFormDropDownOptionsArrayTest } from "@/assets/data/ClientFormDropDownOptions";
+import { ClientFormDropDownOptionsArray } from "@/assets/data/ClientFormDropDownOptions";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { useEffect, useState } from "react";
 import { sendContactForm } from "@/assets/apiLib/api";
@@ -30,7 +30,7 @@ export function ClientForm() {
   const [coachGoals, setCoachGoals] = useState<string>();
   const [disabled, setDisabled] = useState<boolean>(true);
   const [dropDownOptions, setDropDownOptions] = useState<DropDownOptionsType>(
-    ClientFormDropDownOptionsArrayTest
+    ClientFormDropDownOptionsArray
   );
 
   function handleChange(val: string, id: string) {
