@@ -1,6 +1,6 @@
 import styles from "./ClientQuote.module.scss";
 import finishLine from "../../assets/images/finishLine.jpg";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import classNames from "classnames";
 import { SwiperQuotes } from "../SwiperQuotes/SwiperQuotes";
 

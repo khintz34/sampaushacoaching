@@ -1,0 +1,76 @@
+.main {
+  background-color: var(--light-brown);
+  border-radius: 25px;
+  width: 793px;
+  margin-top: 36px;
+  padding: 36px;
+
+  @media (max-width: 1022px) {
+    width: 100vw;
+  }
+}
+
+.formHeader {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.inputFieldContainer {
+  display: flex;
+  flex-direction: column;
+  width: 319px;
+  height: 90px;
+  gap: 7px;
+  margin-bottom: 36px;
+}
+
+.sideBySide {
+  display: flex;
+  flex-direction: row;
+  gap: 36px;
+
+  @media (max-width: 1022px) {
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
+.btn {
+  color: var(--primary-font);
+  border-radius: 45px;
+  width: 132px;
+  height: 54px;
+  font-size: 20px;
+  font-weight: 600px;
+  background-color: var(--gray-color);
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.textAreaContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 36px;
+}
+
+.textarea {
+  height: 20ch;
+  border-radius: 8px;
+  border: none;
+}
+
+.hide {
+  display: none;
+}
+
+.disabled {
+  color: var(--primary-font);
+  border-radius: 45px;
+  width: 132px;
+  height: 54px;
+  font-size: 20px;
+  font-weight: 600px;
+  background-color: var(--light-brown);
+}

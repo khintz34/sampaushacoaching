@@ -1,0 +1,31 @@
+.main {
+  overflow-x: hidden;
+  padding-top: 11vh;
+}
+
+.formParagraph {
+  font-size: 24px;
+
+  @media (max-width: 1022px) {
+    padding: 0 12px;
+  }
+}
+
+.formContainer {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+
+  @media (max-width: 1022px) {
+    padding: 12px 0 0 0;
+  }
+}
+
+.formHeading {
+  font-weight: 900;
+
+  @media (max-width: 1022px) {
+    padding: 12px;
+  }
+}

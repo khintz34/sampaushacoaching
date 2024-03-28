@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
+    "mailtrap": "^3.3.0",
     "next": "14.0.2",
+    "nodemailer": "^6.9.12",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
