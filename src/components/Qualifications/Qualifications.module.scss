@@ -2,8 +2,17 @@
   border: 1px solid var(--light-gray);
   border-radius: 28px;
   color: var(--gray-color);
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
   font-size: 10px;
   text-align: center;
+  align-items: center;
   padding: 5px 10px;
+  gap: 5px;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
