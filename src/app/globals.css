@@ -102,6 +102,7 @@ input[type="email"] {
 select {
   width: 700px;
   height: 56px;
+  background-color: var(--foreground);
 }
 
 @media (max-width: 1023px) {
