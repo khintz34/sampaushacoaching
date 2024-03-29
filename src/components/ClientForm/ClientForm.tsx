@@ -5,7 +5,6 @@ import { ClientFormDataDropdowns } from "../../assets/data/ClientFormData";
 import { ClientFormDropDownOptionsArray } from "@/assets/data/ClientFormDropDownOptions";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { useEffect, useState } from "react";
-import { sendContactForm } from "@/assets/apiLib/api";
 import classNames from "classnames";
 import { useRouter } from "next/navigation";
 import { Injuries } from "@/assets/data/ClientFormResponses";
@@ -39,27 +38,6 @@ export function ClientForm() {
     });
   }
 
-  const onSubmit = async (e: any) => {
-    e.preventDefault();
-    const passingArray = [
-      name,
-      phone,
-      email,
-      dropDownOptions.trainingFor,
-      dropDownOptions.currentDaysAWeek,
-      dropDownOptions.futureDaysAWeek,
-      dropDownOptions.currentFitness,
-      dropDownOptions.favoriteExercise,
-      dropDownOptions.commonExercise,
-      dropDownOptions.injuries,
-      yesInjuries,
-      goals,
-      coachGoals,
-    ];
-
-    await sendContactForm(passingArray.toString()).then(() => router.push("/"));
-  };
-
   useEffect(() => {
     const reg = new RegExp("[^@s]+@[^@s]+.[^@s]+");
     const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
@@ -80,7 +58,16 @@ export function ClientForm() {
   }, [name, phone, email]);
 
   return (
-    <form className={styles.main}>
+    <form
+      className={styles.main}
+      action="https://api.web3forms.com/submit"
+      method="POST"
+    >
+      <input
+        type="hidden"
+        name="access_key"
+        value="372a7f4e-f0c1-4016-92cd-981ade2f95e4"
+      />
       <h2 className={styles.formHeader}>New Client Form</h2>
       <div className={styles.sideBySide}>
         <div className={styles.inputFieldContainer}>
@@ -171,10 +158,14 @@ export function ClientForm() {
           required
         />
       </div>
-
+      <input
+        type="hidden"
+        name="redirect"
+        value="https://web3forms.com/success"
+      />
       <button
         className={classNames(disabled ? styles.disabled : styles.btn)}
-        onClick={(e) => onSubmit(e)}
+        type="submit"
         disabled={disabled}
       >
         Submit
