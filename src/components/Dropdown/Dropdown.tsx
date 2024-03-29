@@ -21,6 +21,8 @@ export function Dropdown({ item, updateSelectOption }: Props) {
         }}
         defaultValue={item.options[0]}
         className={styles.select}
+        required
+        name={item.question}
       >
         {item.options.map((option, index) => (
           <option key={index} value={option} className={styles.option}>
