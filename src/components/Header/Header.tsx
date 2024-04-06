@@ -36,12 +36,13 @@ const Header = ({
   const handleToggle = () => {
     if (navbarStatus === true) {
       changeNavbarStatus(false);
-      document.body.style.overflow = "unset";
+      // these help to not allow scrolling. Leaving until we decide if we want that
+      // document.body.style.overflow = "unset";
     } else {
       changeNavbarStatus(true);
-      if (typeof window != "undefined" && window.document) {
-        document.body.style.overflow = "hidden";
-      }
+      // if (typeof window != "undefined" && window.document) {
+      // document.body.style.overflow = "hidden";
+      // }
     }
   };
 
@@ -54,6 +55,7 @@ const Header = ({
     <div
       className={classNames(
         styles.header,
+        navbarStatus ? styles.positionFixed : "",
         color ? styles.headerScrolled : styles.none
       )}
     >
@@ -75,12 +77,14 @@ const Header = ({
             navbarStatus === true ? styles.showMenu : styles.hideNav
           )}
         >
-          {menuItemData.map((name, index) => {
+          {menuItemData.map((menuItem, index) => {
             return (
               <MenuItem
                 key={`menuItem-${index}`}
                 closeMenu={closeMenu}
-                name={name}
+                name={menuItem.title}
+                pathname={menuItem.pathname}
+                path={menuItem.path}
               />
             );
           })}

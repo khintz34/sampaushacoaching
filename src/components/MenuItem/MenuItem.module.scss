@@ -6,15 +6,23 @@
   padding: 15px;
   color: var(--primary-font);
   font-weight: 500;
-  font-size: 32px;
-
+  font-size: 24px;
+  width: 20vw;
   @media (max-width: 1023px) {
     width: 70vw;
   }
 }
 
-.menuItem:hover {
+.menuItem:hover,
+.currentPath:hover {
   transform: scale(1.1);
+}
+
+.currentPath {
+  color: var(--black-font);
+  border-radius: 56px;
+  background-color: var(--light-brown);
+  padding-right: 50px;
 }
 
 .link {
