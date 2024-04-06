@@ -1,12 +1,11 @@
 export const menuItemData = [
-  { title: "Home", pathname: "/", path: "" },
-  { title: "Client Quotes", pathname: "", path: "/#Testimonials" },
-  { title: "Pricing and Plans", pathname: "", path: "" },
-  { title: "About", pathname: "", path: "" },
-  { title: "Contact", pathname: "", path: "" },
+  { title: "Home", path: "/" },
+  { title: "Client Quotes", path: "/#Testimonials" },
+  { title: "Pricing and Plans", path: "/#FitnessPlans" },
+  { title: "About", path: "/#About" },
+  { title: "Contact", path: "/#Footer" },
   {
     title: "New Client Form",
-    pathname: "/NewClientForm",
-    path: "NewClientForm",
+    path: "/NewClientForm",
   },
 ];

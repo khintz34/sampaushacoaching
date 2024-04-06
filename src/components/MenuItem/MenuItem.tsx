@@ -6,27 +6,26 @@ import { usePathname } from "next/navigation";
 type Props = {
   closeMenu: Function;
   name: string;
-  pathname: string;
   path: string;
 };
 
-export function MenuItem({ closeMenu, name, pathname, path }: Props) {
-  const pathName = usePathname();
+export function MenuItem({ closeMenu, name, path }: Props) {
+  const RouterPathName = usePathname();
   return (
     <Link
       href={{
-        pathname: pathname,
+        pathname: path,
       }}
       className={styles.link}
+      as={path}
       // scroll={false}
     >
       <li
         className={classNames(
           styles.menuItem,
-          pathname === pathName ? styles.currentPath : ""
+          path === RouterPathName ? styles.currentPath : ""
         )}
         onClick={() => {
-          console.log(path);
           closeMenu();
         }}
       >

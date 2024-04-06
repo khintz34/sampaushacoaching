@@ -6,7 +6,7 @@ import { FooterData } from "../../assets/data/FooterData";
 
 export function Footer() {
   return (
-    <main className={styles.main}>
+    <main className={styles.main} id="Footer">
       <div className={styles.left}>
         <Logo />
         <div className={styles.contactTypeContainer}>

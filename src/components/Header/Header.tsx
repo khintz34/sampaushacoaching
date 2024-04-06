@@ -83,7 +83,6 @@ const Header = ({
                 key={`menuItem-${index}`}
                 closeMenu={closeMenu}
                 name={menuItem.title}
-                pathname={menuItem.pathname}
                 path={menuItem.path}
               />
             );
