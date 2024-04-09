@@ -38,11 +38,11 @@ const Header = ({
 
   return (
     <div
-      className={classNames(
-        styles.header,
-        isNavbarOpen ? styles.positionFixed : "",
-        color ? styles.headerScrolled : styles.none
-      )}
+      className={classNames(styles.header, {
+        [styles.positionFixed]: isNavbarOpen,
+        [styles.headerScrolled]: color,
+        [styles.none]: !color,
+      })}
     >
       <Link href={"/"} className={styles.textDecorationNone}>
         <Logo />
@@ -57,10 +57,10 @@ const Header = ({
       </label>
       <div className={styles.sideNav}>
         <ul
-          className={classNames(
-            styles.menuNav,
-            isNavbarOpen === true ? styles.showMenu : styles.hideNav
-          )}
+          className={classNames(styles.menuNav, {
+            [styles.showMenu]: isNavbarOpen,
+            [styles.hideNav]: !isNavbarOpen,
+          })}
         >
           {menuItemData.map((menuItem, index) => {
             return (

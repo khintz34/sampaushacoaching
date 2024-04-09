@@ -20,10 +20,9 @@ export function MenuItem({ closeMenu, title, path }: Props) {
       as={path}
     >
       <li
-        className={classNames(
-          styles.menuItem,
-          path === RouterPathName ? styles.currentPath : ""
-        )}
+        className={classNames(styles.menuItem, {
+          [styles.currentPath]: path === RouterPathName,
+        })}
         onClick={() => {
           closeMenu();
         }}

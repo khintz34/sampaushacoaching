@@ -115,11 +115,10 @@ export function ClientForm() {
       })}
 
       <div
-        className={classNames(
-          dropDownOptions.injuries === Injuries.Yes
-            ? styles.textAreaContainer
-            : styles.hide
-        )}
+        className={classNames({
+          [styles.textAreaContainer]: dropDownOptions.injuries === Injuries.Yes,
+          [styles.hide]: dropDownOptions.injuries === Injuries.No,
+        })}
       >
         <label htmlFor="yesInjuries">Please describe your injury</label>
         <textarea
