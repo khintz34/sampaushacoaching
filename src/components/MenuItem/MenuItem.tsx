@@ -1,21 +1,33 @@
 import Link from "next/link";
 import styles from "./MenuItem.module.scss";
+import classNames from "classnames";
+import { usePathname } from "next/navigation";
 
 type Props = {
   closeMenu: Function;
-  name: String;
+  title: string;
+  path: string;
 };
 
-export function MenuItem({ closeMenu, name }: Props) {
+export function MenuItem({ closeMenu, title, path }: Props) {
+  const RouterPathName = usePathname();
   return (
-    <Link href={"/"} className={styles.link} as="/">
+    <Link
+      href={{
+        pathname: path,
+      }}
+      className={styles.link}
+      as={path}
+    >
       <li
-        className={styles.menuItem}
+        className={classNames(styles.menuItem, {
+          [styles.currentPath]: path === RouterPathName,
+        })}
         onClick={() => {
           closeMenu();
         }}
       >
-        {name}
+        {title}
       </li>
     </Link>
   );

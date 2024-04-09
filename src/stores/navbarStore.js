@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
 export const useNavbarStore = create((set) => ({
-  navbarStatus: false,
-  changeNavbarStatus: (status) => set((state) => ({ navbarStatus: status })),
+  isNavbarOpen: false,
+  setIsNavbarOpen: (status) => set((state) => ({ isNavbarOpen: status })),
 }));

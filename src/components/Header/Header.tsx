@@ -19,10 +19,8 @@ const Header = ({
   backgroundColorSwitch = false,
   scrollValue = BACKGROUND_COLOR_SCROLL_HEIGHT,
 }: Props) => {
-  const navbarStatus = useNavbarStore((state) => state.navbarStatus);
-  const changeNavbarStatus = useNavbarStore(
-    (state) => state.changeNavbarStatus
-  );
+  const isNavbarOpen = useNavbarStore((state) => state.isNavbarOpen);
+  const setIsNavbarOpen = useNavbarStore((state) => state.setIsNavbarOpen);
   const checkRef = useRef<HTMLInputElement>(null);
   const [color, setColor] = useState<boolean>(backgroundColorSwitch);
   const changeColor = () => {
@@ -33,29 +31,18 @@ const Header = ({
     window.addEventListener("scroll", changeColor);
   }, []);
 
-  const handleToggle = () => {
-    if (navbarStatus === true) {
-      changeNavbarStatus(false);
-      document.body.style.overflow = "unset";
-    } else {
-      changeNavbarStatus(true);
-      if (typeof window != "undefined" && window.document) {
-        document.body.style.overflow = "hidden";
-      }
-    }
-  };
-
   const closeMenu = () => {
     checkRef.current!.checked = false;
-    changeNavbarStatus(false);
+    setIsNavbarOpen(false);
   };
 
   return (
     <div
-      className={classNames(
-        styles.header,
-        color ? styles.headerScrolled : styles.none
-      )}
+      className={classNames(styles.header, {
+        [styles.positionFixed]: isNavbarOpen,
+        [styles.headerScrolled]: color,
+        [styles.none]: !color,
+      })}
     >
       <Link href={"/"} className={styles.textDecorationNone}>
         <Logo />
@@ -63,24 +50,25 @@ const Header = ({
       <label className={styles.hamburgerMenu} htmlFor="hamburgerMenu">
         <input
           type="checkbox"
-          onClick={handleToggle}
+          onClick={() => setIsNavbarOpen(!isNavbarOpen)}
           ref={checkRef}
           id="hamburgerMenu"
         />
       </label>
       <div className={styles.sideNav}>
         <ul
-          className={classNames(
-            styles.menuNav,
-            navbarStatus === true ? styles.showMenu : styles.hideNav
-          )}
+          className={classNames(styles.menuNav, {
+            [styles.showMenu]: isNavbarOpen,
+            [styles.hideNav]: !isNavbarOpen,
+          })}
         >
-          {menuItemData.map((name, index) => {
+          {menuItemData.map((menuItem, index) => {
             return (
               <MenuItem
-                key={`menuItem-${index}`}
+                key={index}
                 closeMenu={closeMenu}
-                name={name}
+                title={menuItem.title}
+                path={menuItem.path}
               />
             );
           })}

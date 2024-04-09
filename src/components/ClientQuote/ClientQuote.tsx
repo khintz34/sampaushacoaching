@@ -3,10 +3,11 @@ import finishLine from "../../assets/images/finishLine.jpg";
 import Image from "next/legacy/image";
 import classNames from "classnames";
 import { SwiperQuotes } from "../SwiperQuotes/SwiperQuotes";
+import { IdListData } from "@/assets/data/IdListData";
 
 export function ClientQuote() {
   return (
-    <div className={styles.main} id="Testimonials">
+    <div className={styles.main} id={IdListData.Testimonials}>
       <SwiperQuotes />
 
       <div className={styles.imageWrapper}>

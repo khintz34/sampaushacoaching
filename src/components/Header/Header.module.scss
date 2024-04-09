@@ -78,6 +78,10 @@
   }
 }
 
+.positionFixed {
+  position: fixed;
+}
+
 .headerScrolled {
   background-color: var(--black-font);
 }
@@ -101,16 +105,17 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2vh;
   background-color: var(--black-font);
 }
 
 .menuNav.showMenu {
-  width: 100%;
-  padding-left: 10vw;
+  width: 25%;
+  padding-left: 24px;
   position: fixed;
+
   @media (max-width: 1023px) {
     width: 100%;
+    padding-left: 10vw;
   }
 }
 .menuNav.hideNav {

@@ -7,6 +7,7 @@ import { About } from "@/components/About/About";
 import { SwiperPlans } from "../components/SwiperPlans/SwiperPlans";
 import { PlanContainer } from "@/components/PlanContainer/PlanContainer";
 import { Footer } from "@/components/Footer/Footer";
+import { IdListData } from "@/assets/data/IdListData";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       <About />
       <ClientQuote />
       <Tagline />
-      <div id="FitnessPlans">
+      <div id={IdListData.FitnessPlans}>
         <div className={styles.desktop}>
           <PlanContainer />
         </div>

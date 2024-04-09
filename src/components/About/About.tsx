@@ -9,10 +9,11 @@ import {
   ABOUT_BIO,
   QUALIFICATIONS_DATA,
 } from "../../assets/data/QualificationsData";
+import { IdListData } from "@/assets/data/IdListData";
 
 export function About() {
   return (
-    <div className={styles.aboutMain} id="About">
+    <div className={styles.aboutMain} id={IdListData.About}>
       <div className={styles.imageMain}>
         <div className={styles.imageLayout}>
           <Image
