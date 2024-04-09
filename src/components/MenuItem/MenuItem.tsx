@@ -18,7 +18,6 @@ export function MenuItem({ closeMenu, name, path }: Props) {
       }}
       className={styles.link}
       as={path}
-      // scroll={false}
     >
       <li
         className={classNames(

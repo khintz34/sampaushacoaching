@@ -7,7 +7,7 @@
   color: var(--primary-font);
   font-weight: 500;
   font-size: 24px;
-  width: 20vw;
+  min-width: 15vw;
   @media (max-width: 1023px) {
     width: 70vw;
   }
