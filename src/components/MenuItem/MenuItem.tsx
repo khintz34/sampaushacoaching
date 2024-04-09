@@ -5,11 +5,11 @@ import { usePathname } from "next/navigation";
 
 type Props = {
   closeMenu: Function;
-  name: string;
+  title: string;
   path: string;
 };
 
-export function MenuItem({ closeMenu, name, path }: Props) {
+export function MenuItem({ closeMenu, title, path }: Props) {
   const RouterPathName = usePathname();
   return (
     <Link
@@ -28,7 +28,7 @@ export function MenuItem({ closeMenu, name, path }: Props) {
           closeMenu();
         }}
       >
-        {name}
+        {title}
       </li>
     </Link>
   );

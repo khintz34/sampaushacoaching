@@ -19,10 +19,8 @@ const Header = ({
   backgroundColorSwitch = false,
   scrollValue = BACKGROUND_COLOR_SCROLL_HEIGHT,
 }: Props) => {
-  const navbarStatus = useNavbarStore((state) => state.navbarStatus);
-  const changeNavbarStatus = useNavbarStore(
-    (state) => state.changeNavbarStatus
-  );
+  const isNavbarOpen = useNavbarStore((state) => state.isNavbarOpen);
+  const setIsNavbarOpen = useNavbarStore((state) => state.setIsNavbarOpen);
   const checkRef = useRef<HTMLInputElement>(null);
   const [color, setColor] = useState<boolean>(backgroundColorSwitch);
   const changeColor = () => {
@@ -33,29 +31,16 @@ const Header = ({
     window.addEventListener("scroll", changeColor);
   }, []);
 
-  const handleToggle = () => {
-    if (navbarStatus === true) {
-      changeNavbarStatus(false);
-      // these help to not allow scrolling. Leaving until we decide if we want that
-      // document.body.style.overflow = "unset";
-    } else {
-      changeNavbarStatus(true);
-      // if (typeof window != "undefined" && window.document) {
-      // document.body.style.overflow = "hidden";
-      // }
-    }
-  };
-
   const closeMenu = () => {
     checkRef.current!.checked = false;
-    changeNavbarStatus(false);
+    setIsNavbarOpen(false);
   };
 
   return (
     <div
       className={classNames(
         styles.header,
-        navbarStatus ? styles.positionFixed : "",
+        isNavbarOpen ? styles.positionFixed : "",
         color ? styles.headerScrolled : styles.none
       )}
     >
@@ -65,7 +50,7 @@ const Header = ({
       <label className={styles.hamburgerMenu} htmlFor="hamburgerMenu">
         <input
           type="checkbox"
-          onClick={handleToggle}
+          onClick={() => setIsNavbarOpen(!isNavbarOpen)}
           ref={checkRef}
           id="hamburgerMenu"
         />
@@ -74,15 +59,15 @@ const Header = ({
         <ul
           className={classNames(
             styles.menuNav,
-            navbarStatus === true ? styles.showMenu : styles.hideNav
+            isNavbarOpen === true ? styles.showMenu : styles.hideNav
           )}
         >
           {menuItemData.map((menuItem, index) => {
             return (
               <MenuItem
-                key={`menuItem-${index}`}
+                key={index}
                 closeMenu={closeMenu}
-                name={menuItem.title}
+                title={menuItem.title}
                 path={menuItem.path}
               />
             );
