@@ -5,7 +5,6 @@ export const menuItemData = [
   { title: "About", path: `/#${IdListData.About}` },
   { title: "Testimonials", path: `/#${IdListData.Testimonials}` },
   { title: "Pricing and Plans", path: `/#${IdListData.FitnessPlans}` },
-  { title: "Contact", path: `/#${IdListData.Footer}` },
   {
     title: "New Client Form",
     path: "/NewClientForm",

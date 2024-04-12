@@ -1,16 +1,21 @@
+.menuItemMain {
+  // width: 100%;
+}
+
 .menuItem {
   font-size: 20px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 15px;
+  padding: 15px 32px;
   color: var(--primary-font);
   font-weight: 500;
   font-size: 24px;
-  min-width: 15vw;
-  @media (max-width: 1023px) {
-    width: 70vw;
-  }
+  white-space: nowrap;
+  // min-width: 15vw;
+  // @media (max-width: 1023px) {
+  //   width: 70vw;
+  // }
 }
 
 .menuItem:hover,

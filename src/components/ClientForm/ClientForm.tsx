@@ -120,7 +120,9 @@ export function ClientForm() {
           [styles.hide]: dropDownOptions.injuries === Injuries.No,
         })}
       >
-        <label htmlFor="yesInjuries">Please describe your injury</label>
+        <label htmlFor="yesInjuries" className="label">
+          Please describe your injury
+        </label>
         <textarea
           name="yesInjuries"
           id="yesInjuryes"

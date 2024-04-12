@@ -3,11 +3,10 @@ import { Logo } from "../Logo/Logo";
 import styles from "./Footer.module.scss";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FooterData } from "../../assets/data/FooterData";
-import { IdListData } from "@/assets/data/IdListData";
 
 export function Footer() {
   return (
-    <main className={styles.main} id={IdListData.Footer}>
+    <main className={styles.main}>
       <div className={styles.left}>
         <Logo />
         <div className={styles.contactTypeContainer}>
