@@ -2,12 +2,11 @@ import { IdListData } from "./IdListData";
 
 export const menuItemData = [
   { title: "Home", path: "/" },
-  { title: "Client Quotes", path: `/#${IdListData.Testimonials}` },
-  { title: "Pricing and Plans", path: `/#${IdListData.FitnessPlans}` },
   { title: "About", path: `/#${IdListData.About}` },
-  { title: "Contact", path: `/#${IdListData.Footer}` },
+  { title: "Testimonials", path: `/#${IdListData.Testimonials}` },
+  { title: "Pricing and Plans", path: `/#${IdListData.FitnessPlans}` },
   {
-    title: "New Client Form",
+    title: "Contact",
     path: "/NewClientForm",
   },
 ];
