@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css/bundle";
 import { Quote } from "../Quote/Quote";
-import { QuoteData } from "../../assets/data/QuoteData";
+import { QuoteData } from "../../data/QuoteData";
 
 export function SwiperQuotes() {
   return (

@@ -1,13 +1,13 @@
 "use client";
 
 import styles from "./ClientForm.module.scss";
-import { ClientFormDataDropdowns } from "../../assets/data/ClientFormData";
-import { ClientFormDropDownOptionsArray } from "@/assets/data/ClientFormDropDownOptions";
+import { ClientFormDataDropdowns } from "../../data/ClientFormData";
+import { ClientFormDropDownOptionsArray } from "@/data/ClientFormDropDownOptions";
 import { Dropdown } from "../Dropdown/Dropdown";
 import { useEffect, useState } from "react";
 import classNames from "classnames";
 import { useRouter } from "next/navigation";
-import { Injuries } from "@/assets/data/ClientFormResponses";
+import { Injuries } from "@/data/ClientFormResponses";
 
 type DropDownOptionsType = {
   trainingFor: string;

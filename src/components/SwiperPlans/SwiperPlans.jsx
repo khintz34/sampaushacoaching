@@ -3,7 +3,7 @@ import styles from "./SwiperPlans.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css/bundle";
-import { PlanData } from "../../assets/data/PlanData";
+import { PlanData } from "../../data/PlanData";
 import { FitnessPlan } from "../FitnessPlan/FitnessPlan";
 
 export function SwiperPlans() {

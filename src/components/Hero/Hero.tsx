@@ -1,47 +1,47 @@
 "use client";
-import HeroDesktop from "../../assets/images/HeroDesktop.jpg";
-import HeroMobile from "../../assets/images/MobileHerov1.jpg";
-import Image from "next/legacy/image";
 import styles from "./Hero.module.scss";
 import Header from "../Header/Header";
-import { IdListData } from "@/assets/data/IdListData";
+import { IdListData } from "@/data/IdListData";
+import Image from "next/image";
+import classNames from "classnames";
 
 export function Hero() {
-  const ICON_SIZE = "40px";
+  const imageProps = {
+    objectFit: "cover",
+    layout: "fill",
+    objectPosition: "50% 50%",
+    className: styles.heroImage,
+  };
 
   return (
     <main className={styles.main} id={IdListData.Home}>
       <Header backgroundColorSwitch={false} scrollValue={200} />
-      <div className={styles.imageWrapper}>
-        <div className={`${styles.mobileImage} ${styles.image}`}>
+      <div>
+        <div className={styles.mobileImage}>
           <Image
-            src={HeroMobile}
-            objectFit="cover"
+            src="/images/MobileHerov1.jpg"
             alt="Sam Pausha running in the Madison Ironman"
-            className={`${styles.heroImage}`}
-            objectPosition="50% 50%"
-            layout="fill"
+            {...imageProps}
           />
         </div>
-        <div className={`${styles.desktopImage} ${styles.image}`}>
+        <div className={classNames(styles.desktopImage, styles.image)}>
           <Image
-            src={HeroDesktop}
+            src="/images/HeroDesktop.jpg"
             alt="Sam Pausha riding his bike in the Madison Ironman"
-            className={styles.heroImage}
-            objectFit="cover"
-            layout="fill"
-            objectPosition="50% 50%"
+            {...imageProps}
           />
         </div>
 
         <div className={styles.overlay} />
       </div>
       <div className={styles.heroFooter}>
-        <div className={`${styles.blue} ${styles.exerciseTypeTitle}`}>SWIM</div>
-        <div className={`${styles.yellow} ${styles.exerciseTypeTitle}`}>
+        <div className={classNames(styles.blue, styles.exerciseTypeTitle)}>
+          SWIM
+        </div>
+        <div className={classNames(styles.yellow, styles.exerciseTypeTitle)}>
           BIKE
         </div>
-        <div className={`${styles.orange} ${styles.exerciseTypeTitle}`}>
+        <div className={classNames(styles.orange, styles.exerciseTypeTitle)}>
           RUN
         </div>
       </div>

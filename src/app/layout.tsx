@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
-const poppins = Poppins({ weight: ["100", "400", "800"], subsets: ["latin"] });
+const poppins = Poppins({ weight: ["100", "400", "900"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sam Pausha Coaching",
