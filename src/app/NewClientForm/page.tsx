@@ -10,8 +10,8 @@ export default function NewClientForm() {
       <div className={styles.formContainer}>
         <h2 className={styles.formHeading}>Ready to Take Charge?</h2>
         <p className={styles.formParagraph}>
-          Complete our new client form and I’ll reach out within a few days to
-          discuss your personalized fitness plan!
+          Complete our new client form and I&apos;ll reach out within a few days
+          to discuss your personalized fitness plan!
         </p>
         <ClientForm />
       </div>
