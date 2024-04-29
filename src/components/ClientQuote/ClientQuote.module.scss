@@ -9,26 +9,13 @@
 
 .imageWrapper {
   position: relative;
-
-  @media (max-width: 1023px) {
-    overflow: hidden;
-    height: 50vh;
-    width: 100vw;
-  }
-}
-
-.image {
-  height: 70vh;
   width: 65vw;
+  height: 70vh;
 
   @media (max-width: 1023px) {
     height: 50vh;
-    width: 100vw;
+    width: 100%;
   }
-}
-
-.mobileImage {
-  position: relative;
 }
 
 .desktopImage {

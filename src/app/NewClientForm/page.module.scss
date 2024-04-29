@@ -1,33 +1,38 @@
 .main {
   overflow-x: hidden;
-  padding-top: 11vh;
+  padding-top: 100px;
+
+  @media (max-width: 1023px) {
+    padding-top: 72px;
+  }
 }
 
 .formParagraph {
   font-size: 24px;
-  width: 55vw;
+  width: 100%;
+  max-width: 55%;
 
-  @media (max-width: 1022px) {
-    padding: 0 12px;
-    width: 90vw;
+  @media (max-width: 1023px) {
+    padding: 0 24px;
+    max-width: 100%;
   }
 }
 
 .formContainer {
-  padding: 36px;
+  padding: 48px;
   display: flex;
   flex-direction: column;
   max-width: 100vw;
 
-  @media (max-width: 1022px) {
-    padding: 12px 0 0 0;
+  @media (max-width: 1023px) {
+    padding: 0;
   }
 }
 
 .formHeading {
   font-weight: 900;
 
-  @media (max-width: 1022px) {
-    padding: 12px;
+  @media (max-width: 1023px) {
+    padding: 24px;
   }
 }

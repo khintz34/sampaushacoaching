@@ -1,6 +1,4 @@
-export const ABOUT_BIO = `Hi! I am Coach Sam!
-
-I am a personal fitness coach that helps athletes of all abilities reach their fitness goals. Whether your goal is to get in shape, conquer a 5K, or hit a PR in a triathlon, I have a tailored coaching plan for you!  
+export const ABOUT_BIO = `I am a personal fitness coach that helps athletes of all abilities reach their fitness goals. Whether your goal is to get in shape, conquer a 5K, or hit a PR in a triathlon, I have a tailored coaching plan for you!  
 
 I found a passion for running at the age of 15 and never looked back. In 2018, I bought a new bike and started competing in triathlons. With over a decade of experience in running and racing triathlons, I have gained a firsthand understanding how the body responds to training. In 2023, I decided to use this knowledge to help others reach their physical fitness goals and completed the USAT L1 Coaching Certificate to become a certified coach. 
 

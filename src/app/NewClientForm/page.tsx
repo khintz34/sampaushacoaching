@@ -15,6 +15,7 @@ export default function NewClientForm() {
         </p>
         <ClientForm />
       </div>
+      <Footer />
     </main>
   );
 }

@@ -29,6 +29,7 @@ const Header = ({
   }, [setColor, scrollValue]);
 
   useEffect(() => {
+    changeColor();
     window.addEventListener("scroll", changeColor);
 
     return () => {
@@ -42,7 +43,7 @@ const Header = ({
   };
 
   return (
-    <>
+    <nav className={styles.navWrapper}>
       <div
         className={classNames(styles.header, {
           [styles.headerScrolled]: color,
@@ -76,7 +77,7 @@ const Header = ({
           );
         })}
       </ul>
-    </>
+    </nav>
   );
 };
 

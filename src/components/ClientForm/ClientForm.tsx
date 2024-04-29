@@ -6,7 +6,6 @@ import { ClientFormDropDownOptionsArray } from "@/data/ClientFormDropDownOptions
 import { Dropdown } from "../Dropdown/Dropdown";
 import { useEffect, useState } from "react";
 import classNames from "classnames";
-import { useRouter } from "next/navigation";
 import { Injuries } from "@/data/ClientFormResponses";
 
 type DropDownOptionsType = {
@@ -20,7 +19,6 @@ type DropDownOptionsType = {
 };
 
 export function ClientForm() {
-  const router = useRouter();
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>();
   const [email, setEmail] = useState<string>();
