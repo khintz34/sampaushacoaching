@@ -1,12 +1,13 @@
+.navWrapper {
+  z-index: 100;
+}
+
 .hamburgerMenu {
   --x-width: calc(var(--hamburger-height) * 1.41421356237);
   display: flex;
   flex-direction: column;
   gap: var(--hamburger-gap);
   width: max-content;
-  position: absolute;
-  right: 24px;
-  z-index: 2;
   cursor: pointer;
 }
 
@@ -62,25 +63,19 @@
 }
 
 .header {
-  width: 100vw;
-  height: 10vh;
-  position: absolute;
+  width: 100%;
+  position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
+  padding: 24px 48px;
+  transition: background-color 0.3s ease-out;
 
   @media (max-width: 1023px) {
-    position: fixed;
-    padding: 12px;
-    transition: background-color 0.5s linear;
+    padding: 12px 24px;
   }
-}
-
-.positionFixed {
-  position: fixed;
 }
 
 .headerScrolled {
@@ -93,32 +88,31 @@
 }
 
 .menuNav {
-  overflow-y: scroll;
+  z-index: 1;
   list-style: none;
-  position: absolute;
   top: 0vh;
   right: 0;
   height: 100vh;
-  padding-top: 12vh;
-  display: block;
+  padding: 120px 48px;
   opacity: 1;
-  transition: 1s;
+  transition: 0.3s ease-out;
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--black-font);
+  gap: 24px;
+  transform: translateX(100%);
+
+  @media (max-width: 1023px) {
+    padding: 120px 24px;
+  }
 }
 
 .menuNav.showMenu {
-  width: 25%;
-  padding-left: 24px;
-  position: fixed;
+  transform: translateX(0);
 
   @media (max-width: 1023px) {
     width: 100%;
-    padding-left: 10vw;
   }
-}
-.menuNav.hideNav {
-  width: 0%;
 }

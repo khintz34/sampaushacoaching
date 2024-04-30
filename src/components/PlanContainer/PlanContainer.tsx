@@ -1,5 +1,5 @@
 import styles from "./PlanContainer.module.scss";
-import { PlanData } from "../../assets/data/PlanData";
+import { PlanData } from "../../data/PlanData";
 import { FitnessPlan } from "../FitnessPlan/FitnessPlan";
 
 export function PlanContainer() {

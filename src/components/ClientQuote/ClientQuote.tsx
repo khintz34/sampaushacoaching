@@ -1,9 +1,8 @@
 import styles from "./ClientQuote.module.scss";
-import finishLine from "../../assets/images/finishLine.jpg";
-import Image from "next/legacy/image";
 import classNames from "classnames";
 import { SwiperQuotes } from "../SwiperQuotes/SwiperQuotes";
-import { IdListData } from "@/assets/data/IdListData";
+import { IdListData } from "@/data/IdListData";
+import Image from "next/image";
 
 export function ClientQuote() {
   return (
@@ -11,26 +10,22 @@ export function ClientQuote() {
       <SwiperQuotes />
 
       <div className={styles.imageWrapper}>
-        <div className={classNames(styles.mobileImage, styles.image)}>
-          <Image
-            src={finishLine}
-            objectFit="cover"
-            alt="Sam Pausha crossing the finish line at the Des Moines Ironman"
-            className={styles.heroImage}
-            objectPosition="50% 50%"
-            layout="fill"
-          />
-        </div>
-        <div className={classNames(styles.desktopImage, styles.image)}>
-          <Image
-            objectFit="cover"
-            src={finishLine}
-            layout="fill"
-            objectPosition="30% 50%"
-            alt="Sam Pausha crossing the finish line at the Des Moines Ironman"
-            className={styles.heroImage}
-          />
-        </div>
+        <Image
+          src="/images/finishLine.jpg"
+          objectFit="cover"
+          alt="Sam Pausha crossing the finish line at the Des Moines Ironman"
+          className={classNames(styles.heroImage, styles.mobileImage)}
+          objectPosition="50% 50%"
+          layout="fill"
+        />
+        <Image
+          objectFit="cover"
+          src="/images/finishLine.jpg"
+          layout="fill"
+          objectPosition="30% 50%"
+          alt="Sam Pausha crossing the finish line at the Des Moines Ironman"
+          className={classNames(styles.heroImage, styles.desktopImage)}
+        />
       </div>
     </div>
   );

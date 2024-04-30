@@ -1,11 +1,11 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "../Header/Header.module.scss";
 import Link from "next/link";
 import { useNavbarStore } from "@/stores/navbarStore";
 import { Logo } from "../Logo/Logo";
 import { MenuItem } from "../MenuItem/MenuItem";
-import { menuItemData } from "../../assets/data/MenuItemData";
+import { menuItemData } from "../../data/MenuItemData";
 import classNames from "classnames";
 
 type Props = {
@@ -23,13 +23,19 @@ const Header = ({
   const setIsNavbarOpen = useNavbarStore((state) => state.setIsNavbarOpen);
   const checkRef = useRef<HTMLInputElement>(null);
   const [color, setColor] = useState<boolean>(backgroundColorSwitch);
-  const changeColor = () => {
+
+  const changeColor = useCallback(() => {
     setColor(window.scrollY >= scrollValue);
-  };
+  }, [setColor, scrollValue]);
 
   useEffect(() => {
+    changeColor();
     window.addEventListener("scroll", changeColor);
-  }, []);
+
+    return () => {
+      window.removeEventListener("scroll", changeColor);
+    };
+  }, [changeColor]);
 
   const closeMenu = () => {
     checkRef.current!.checked = false;
@@ -37,44 +43,41 @@ const Header = ({
   };
 
   return (
-    <div
-      className={classNames(styles.header, {
-        [styles.positionFixed]: isNavbarOpen,
-        [styles.headerScrolled]: color,
-        [styles.none]: !color,
-      })}
-    >
-      <Link href={"/"} className={styles.textDecorationNone}>
-        <Logo />
-      </Link>
-      <label className={styles.hamburgerMenu} htmlFor="hamburgerMenu">
-        <input
-          type="checkbox"
-          onClick={() => setIsNavbarOpen(!isNavbarOpen)}
-          ref={checkRef}
-          id="hamburgerMenu"
-        />
-      </label>
-      <div className={styles.sideNav}>
-        <ul
-          className={classNames(styles.menuNav, {
-            [styles.showMenu]: isNavbarOpen,
-            [styles.hideNav]: !isNavbarOpen,
-          })}
-        >
-          {menuItemData.map((menuItem, index) => {
-            return (
-              <MenuItem
-                key={index}
-                closeMenu={closeMenu}
-                title={menuItem.title}
-                path={menuItem.path}
-              />
-            );
-          })}
-        </ul>
+    <nav className={styles.navWrapper}>
+      <div
+        className={classNames(styles.header, {
+          [styles.headerScrolled]: color,
+        })}
+      >
+        <Link href="/" className={styles.textDecorationNone}>
+          <Logo />
+        </Link>
+        <label className={styles.hamburgerMenu} htmlFor="hamburgerMenu">
+          <input
+            type="checkbox"
+            onClick={() => setIsNavbarOpen(!isNavbarOpen)}
+            ref={checkRef}
+            id="hamburgerMenu"
+          />
+        </label>
       </div>
-    </div>
+      <ul
+        className={classNames(styles.menuNav, {
+          [styles.showMenu]: isNavbarOpen,
+        })}
+      >
+        {menuItemData.map((menuItem, index) => {
+          return (
+            <MenuItem
+              key={index}
+              closeMenu={closeMenu}
+              title={menuItem.title}
+              path={menuItem.path}
+            />
+          );
+        })}
+      </ul>
+    </nav>
   );
 };
 

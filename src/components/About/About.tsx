@@ -1,15 +1,10 @@
 "use client";
-import Image from "next/legacy/image";
 import styles from "./About.module.scss";
-import ThumbsUpImageSrc from "../../assets/images/ThumbsUpBike.jpg";
 import classNames from "classnames";
-import ArmsUpImageSrc from "../../assets/images/ArmsUp.jpg";
 import { Qualifications } from "../Qualifications/Qualifications";
-import {
-  ABOUT_BIO,
-  QUALIFICATIONS_DATA,
-} from "../../assets/data/QualificationsData";
-import { IdListData } from "@/assets/data/IdListData";
+import { ABOUT_BIO, QUALIFICATIONS_DATA } from "../../data/QualificationsData";
+import { IdListData } from "@/data/IdListData";
+import Image from "next/image";
 
 export function About() {
   return (
@@ -17,7 +12,7 @@ export function About() {
       <div className={styles.imageMain}>
         <div className={styles.imageLayout}>
           <Image
-            src={ArmsUpImageSrc}
+            src="/images/ArmsUp.jpg"
             height={300}
             width={200}
             alt={"Sam Posing with his arms up after the Des Moines Iron Man"}
@@ -25,7 +20,7 @@ export function About() {
         </div>
         <div className={classNames(styles.bottomImage, styles.imageLayout)}>
           <Image
-            src={ThumbsUpImageSrc}
+            src="/images/ThumbsUpBike.jpg"
             height={300}
             width={200}
             alt={

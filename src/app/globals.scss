@@ -119,3 +119,16 @@ textarea {
   padding: 10px;
   border: none;
 }
+
+.swiper {
+  z-index: 0 !important;
+  cursor: grab;
+}
+
+.swiper-pagination {
+  bottom: 32px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--gray-color) !important;
+}

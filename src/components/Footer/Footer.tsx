@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { Logo } from "../Logo/Logo";
 import styles from "./Footer.module.scss";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { FooterData } from "../../assets/data/FooterData";
+import { FooterData } from "../../data/FooterData";
 
 export function Footer() {
   return (

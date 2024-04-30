@@ -7,7 +7,7 @@ import { About } from "@/components/About/About";
 import { SwiperPlans } from "../components/SwiperPlans/SwiperPlans";
 import { PlanContainer } from "@/components/PlanContainer/PlanContainer";
 import { Footer } from "@/components/Footer/Footer";
-import { IdListData } from "@/assets/data/IdListData";
+import { IdListData } from "@/data/IdListData";
 
 export default function Home() {
   return (

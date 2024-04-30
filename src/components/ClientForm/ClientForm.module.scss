@@ -3,9 +3,10 @@
   border-radius: 25px;
   width: 793px;
   margin-top: 36px;
-  padding: 36px;
+  padding: 48px 24px;
 
   @media (max-width: 1022px) {
+    border-radius: 0;
     width: 100vw;
   }
 }

@@ -16,7 +16,9 @@ export function MenuItem({ closeMenu, title, path }: Props) {
       href={{
         pathname: path,
       }}
-      className={styles.link}
+      className={classNames({
+        [styles.currentLink]: path === RouterPathName,
+      })}
       as={path}
     >
       <li
